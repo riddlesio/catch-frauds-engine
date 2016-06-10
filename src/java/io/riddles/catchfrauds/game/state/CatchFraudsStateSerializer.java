@@ -24,7 +24,6 @@ import org.json.JSONObject;
 
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
 import io.riddles.catchfrauds.game.move.CheckPoint;
-import io.riddles.javainterface.game.state.AbstractState;
 import io.riddles.javainterface.game.state.AbstractStateSerializer;
 
 /**
