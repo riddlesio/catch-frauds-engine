@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <settings default="riddlescopyright">
+    <module2copyright>
+      <element module="All" copyright="riddlescopyright" />
+    </module2copyright>
+  </settings>
+</component>
