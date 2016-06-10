@@ -52,8 +52,16 @@ public class CatchFraudsStateSerializer extends AbstractStateSerializer<CatchFra
         stateJson.put("isFraudulent", state.isFraudulent());
 
         CatchFraudsMove move = (CatchFraudsMove) state.getMoves().get(0);
-        stateJson.put("isRefused", move.isRefused());
-        stateJson.put("isCheckpointApproved", visitCheckPoints(move.getCheckPoints()));
+
+        if (move.getException() == null) {
+            stateJson.put("isRefused", move.isRefused());
+            stateJson.put("isCheckpointApproved", visitCheckPoints(move.getCheckPoints()));
+            stateJson.put("exception", JSONObject.NULL);
+        } else {
+            stateJson.put("isRefused", JSONObject.NULL);
+            stateJson.put("isCheckpointApproved", JSONObject.NULL);
+            stateJson.put("exception", move.getException().getMessage());
+        }
 
         return stateJson;
     }
