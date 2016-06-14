@@ -30,7 +30,7 @@ import io.riddles.catchfrauds.engine.CatchFraudsEngine;
  */
 public class CatchFrauds {
 
-    private static final String RECORDS_FILE = "/home/jim/Documents/adyentest.csv";
+    private static final String RECORDS_FILE = "./src/resources/adyentest.csv";
 
     public static void main(String[] args) {
         CatchFraudsEngine engine = new CatchFraudsEngine(RECORDS_FILE);

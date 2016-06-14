@@ -10,7 +10,6 @@
     </content>
     <content url="file://$MODULE_DIR$/../../test">
       <sourceFolder url="file://$MODULE_DIR$/../../test/groovy" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../test/java" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
