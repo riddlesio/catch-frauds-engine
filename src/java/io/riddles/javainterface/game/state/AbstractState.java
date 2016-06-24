@@ -20,10 +20,6 @@
 package io.riddles.javainterface.game.state;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import io.riddles.javainterface.game.move.AbstractMove;
 
 /**
  * io.riddles.javainterface.engine.state.AbstractState - Created on 3-6-16
@@ -37,22 +33,22 @@ import io.riddles.javainterface.game.move.AbstractMove;
  *
  * @author Jim van Eeden - jim@riddles.io
  */
-public abstract class AbstractState {
+public abstract class AbstractState<M> {
 
     private AbstractState previousState;
     private AbstractState nextState;
     private int roundNumber;
-    private List moves;
+    private ArrayList<M> moves;
 
     public AbstractState() {
         this.previousState = null;
         this.nextState = null;
         this.roundNumber = -1;
-        this.moves = new ArrayList<AbstractMove>();
+        this.moves = new ArrayList<>();
     }
 
     // If a single state contains multiple moves (different players move at the same time)
-    public AbstractState(AbstractState previousState, List moves, int roundNumber) {
+    public AbstractState(AbstractState previousState, ArrayList<M> moves, int roundNumber) {
         this.previousState = previousState;
         this.previousState.nextState = this;
         this.roundNumber = roundNumber;
@@ -60,11 +56,13 @@ public abstract class AbstractState {
     }
 
     // If a single state contains only one move (players move in turn)
-    public AbstractState(AbstractState previousState, AbstractMove move, int roundNumber) {
+    public AbstractState(AbstractState previousState, M move, int roundNumber) {
         this.previousState = previousState;
         this.previousState.nextState = this;
         this.roundNumber = roundNumber;
-        this.moves = Collections.singletonList(move);
+
+        this.moves = new ArrayList<>();
+        this.moves.add(move);
     }
 
     /**
@@ -91,7 +89,7 @@ public abstract class AbstractState {
     /**
      * @return The moves in this state
      */
-    public List getMoves() {
+    public ArrayList<M> getMoves() {
         return this.moves;
     }
 

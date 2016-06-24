@@ -19,8 +19,11 @@
 
 package io.riddles.catchfrauds.game.processor;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
+import io.riddles.catchfrauds.CatchFrauds;
 import io.riddles.catchfrauds.game.move.ActionType;
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
 import io.riddles.catchfrauds.game.move.CatchFraudsMoveDeserializer;
@@ -42,12 +45,14 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     private ArrayList<Record> records;
     private int roundNumber;
     private boolean gameOver;
+    private double scoreDelta; // subtracted from player score for each mistake
 
     public CatchFraudsProcessor(ArrayList<CatchFraudsPlayer> players, ArrayList<Record> records) {
         super(players);
         this.records = records;
         this.checkPointValues = new ArrayList<>();
         this.gameOver = false;
+        this.scoreDelta = 100.0 / records.size();
     }
 
     @Override
@@ -81,7 +86,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
             // create the next state
             nextState = new CatchFraudsState(state, move, roundNumber, record.isFraudulent());
 
-            state = nextState;
+            this.updateScore(nextState);
 
             // stop game if bot returns nothing
             if (response == null) {
@@ -103,12 +108,22 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     }
 
     @Override
-    public int getScore() {
-        return 0;
+    public double getScore() {
+        double score = this.getPlayers().get(0).getScore();
+        BigDecimal bdScore = new BigDecimal(score);
+
+        return bdScore.setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     public ArrayList<String> getCheckPointValues() {
         return this.checkPointValues;
+    }
+
+    private void updateScore(CatchFraudsState state) {
+        CatchFraudsMove move = state.getMoves().get(0);
+        CatchFraudsPlayer player = move.getPlayer();
+
+        player.updateScore(state.isFraudulent(), move.isRefused(), this.scoreDelta);
     }
 
     private void storeCheckpointInput(String input) {

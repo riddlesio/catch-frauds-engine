@@ -22,6 +22,9 @@ package io.riddles.catchfrauds.game;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import io.riddles.catchfrauds.game.processor.CatchFraudsProcessor;
 import io.riddles.catchfrauds.game.state.CatchFraudsState;
 import io.riddles.catchfrauds.game.state.CatchFraudsStateSerializer;
@@ -60,6 +63,9 @@ public class CatchFraudsGameSerializer extends
             states.put(serializer.traverseToJson(state));
         }
         game.put("states", states);
+
+        // add score
+        game.put("score", processor.getScore());
 
         return game.toString();
     }

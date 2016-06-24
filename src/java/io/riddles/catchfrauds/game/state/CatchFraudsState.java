@@ -19,8 +19,6 @@
 
 package io.riddles.catchfrauds.game.state;
 
-import java.util.ArrayList;
-
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
 import io.riddles.javainterface.game.state.AbstractState;
 
@@ -31,7 +29,7 @@ import io.riddles.javainterface.game.state.AbstractState;
  *
  * @author jim
  */
-public class CatchFraudsState extends AbstractState {
+public class CatchFraudsState extends AbstractState<CatchFraudsMove> {
 
     private Boolean isFraudulent;
 

@@ -89,5 +89,5 @@ public abstract class AbstractProcessor<P extends AbstractPlayer, S extends Abst
     /**
      * @return The current game score
      */
-    public abstract int getScore();
+    public abstract double getScore();
 }
