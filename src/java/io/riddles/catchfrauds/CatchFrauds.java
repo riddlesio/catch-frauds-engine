@@ -19,6 +19,8 @@
 
 package io.riddles.catchfrauds;
 
+import java.net.URL;
+
 import io.riddles.catchfrauds.engine.CatchFraudsEngine;
 
 /**
@@ -30,10 +32,11 @@ import io.riddles.catchfrauds.engine.CatchFraudsEngine;
  */
 public class CatchFrauds {
 
-    private static final String RECORDS_FILE = "./src/resources/adyentest.csv";
+    private static final String RECORDS_FILE = "/adyentest.csv";
 
     public static void main(String[] args) {
-        CatchFraudsEngine engine = new CatchFraudsEngine(RECORDS_FILE);
+        URL recordsFileUrl = CatchFrauds.class.getResource(RECORDS_FILE);
+        CatchFraudsEngine engine = new CatchFraudsEngine(recordsFileUrl);
 
         engine.run();
     }

@@ -20,7 +20,8 @@
 package io.riddles.catchfrauds.engine;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
@@ -44,12 +45,12 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
     protected final int MAX_CHECKPOINTS = 10;
     protected ArrayList<Record> records;
 
-    public CatchFraudsEngine(String recordsFile) {
+    public CatchFraudsEngine(URL recordsFile) {
         super();
         this.records = readRecordsFile(recordsFile);
     }
 
-    public CatchFraudsEngine(String recordsFile, String wrapperFile, String[] botFiles) {
+    public CatchFraudsEngine(URL recordsFile, String wrapperFile, String[] botFiles) {
         super(wrapperFile, botFiles);
         this.records = readRecordsFile(recordsFile);
     }
@@ -81,11 +82,11 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         return serializer.traverseToString(this.processor, initialState);
     }
 
-    private ArrayList<Record> readRecordsFile(String recordsFile) {
+    private ArrayList<Record> readRecordsFile(URL recordsFile) {
         ArrayList<Record> records = new ArrayList<>();
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader(recordsFile));
+            BufferedReader br = new BufferedReader(new InputStreamReader(recordsFile.openStream()));
             String line;
             String[] recordFormat = null;
 
