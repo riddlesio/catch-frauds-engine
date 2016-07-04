@@ -41,6 +41,8 @@ import io.riddles.javainterface.game.processor.AbstractProcessor;
  */
 public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, CatchFraudsState> {
 
+    private final int MAX_CHECKPOINTS = 20;
+
     private ArrayList<String> checkPointValues;
     private ArrayList<Record> records;
     private int roundNumber;
@@ -58,7 +60,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     @Override
     public void preGamePhase() {
         for (CatchFraudsPlayer player : this.players) {
-            storeCheckpointInput(player.requestMove(ActionType.CHECKPOINTS.toString()));
+            storeCheckpointInput(player, player.requestMove(ActionType.CHECKPOINTS.toString()));
         }
     }
 
@@ -126,10 +128,20 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
         player.updateScore(state.isFraudulent(), move.isRefused(), this.scoreDelta);
     }
 
-    private void storeCheckpointInput(String input) {
+    private void storeCheckpointInput(CatchFraudsPlayer player, String input) {
         if (input.length() <= 0) return;
 
         String[] values = input.split(";");
+
+        if (values.length > MAX_CHECKPOINTS) {
+            String warning = String.format("Your bot cannot have more " +
+                    "than %d check points. Bot is shut down.", MAX_CHECKPOINTS);
+            player.sendWarning(warning);
+            this.gameOver = true;
+
+            return;
+        }
+
         for (String value : values) {
             value = value.trim();
             if (value.length() > 0) {
