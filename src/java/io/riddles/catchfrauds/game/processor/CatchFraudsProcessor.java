@@ -41,7 +41,7 @@ import io.riddles.javainterface.game.processor.AbstractProcessor;
  */
 public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, CatchFraudsState> {
 
-    private final int MAX_CHECKPOINTS = 20;
+    private int MAX_CHECKPOINTS;
 
     private ArrayList<String> checkPointValues;
     private ArrayList<Record> records;
@@ -49,12 +49,15 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     private boolean gameOver;
     private double scoreDelta; // subtracted from player score for each mistake
 
-    public CatchFraudsProcessor(ArrayList<CatchFraudsPlayer> players, ArrayList<Record> records) {
+    public CatchFraudsProcessor(ArrayList<CatchFraudsPlayer> players,
+                                ArrayList<Record> records,int maxCheckPoints) {
         super(players);
         this.records = records;
         this.checkPointValues = new ArrayList<>();
         this.gameOver = false;
         this.scoreDelta = 100.0 / records.size();
+
+        MAX_CHECKPOINTS = maxCheckPoints;
     }
 
     @Override

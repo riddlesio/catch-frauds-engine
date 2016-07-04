@@ -42,8 +42,8 @@ import io.riddles.javainterface.engine.AbstractEngine;
 public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         CatchFraudsPlayer, CatchFraudsState> {
 
-    protected final int MAX_CHECKPOINTS = 10;
-    protected ArrayList<Record> records;
+    private final int MAX_CHECKPOINTS = 20;
+    private ArrayList<Record> records;
 
     public CatchFraudsEngine(URL recordsFile) {
         super();
@@ -67,7 +67,7 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
 
     @Override
     protected CatchFraudsProcessor createProcessor() {
-        return new CatchFraudsProcessor(this.players, this.records);
+        return new CatchFraudsProcessor(this.players, this.records, MAX_CHECKPOINTS);
     }
 
     @Override
