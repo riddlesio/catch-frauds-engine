@@ -33,8 +33,8 @@ class CatchFraudsEngineSpec extends Specification {
 
     class TestEngine extends CatchFraudsEngine {
 
-        TestEngine(String recordsFile, IOHandler ioHandler) {
-            super(recordsFile);
+        TestEngine(URL recordsFileUrl, IOHandler ioHandler) {
+            super(recordsFileUrl);
             this.ioHandler = ioHandler;
         }
 
@@ -55,8 +55,9 @@ class CatchFraudsEngineSpec extends Specification {
         }
     }
 
-    def recordsPath = "./test/adyentest.csv"
-    def engine = new TestEngine(recordsPath, Mock(IOHandler));
+    def recordsPath = "./test/data.csv"
+    URL recordsFileUrl = TestEngine.class.getResource(recordsPath);
+    def engine = new TestEngine(recordsFileUrl, Mock(IOHandler));
 
     def "test engine initialization"() {
 
@@ -92,11 +93,11 @@ class CatchFraudsEngineSpec extends Specification {
         setup:
         String[] botInputs = new String[1]
 
-        def recordsPath = "./test/adyentest.csv"
+        URL recordsFileUrl = TestEngine.class.getResource(recordsPath);
         def wrapperInput = "./test/wrapper_input.txt"
         botInputs[0] = "./test/bot_input.txt"
 
-        def engine = new TestEngine(recordsPath, wrapperInput, botInputs)
+        def engine = new TestEngine(recordsFileUrl, wrapperInput, botInputs)
 
         when:
         engine.run()

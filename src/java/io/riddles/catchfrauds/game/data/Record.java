@@ -30,8 +30,8 @@ import java.util.LinkedHashMap;
  */
 public class Record {
 
-    private final String STATE_COLUMN = "state";
-    private final String FRAUDULENT_VALUE = "Refused";
+    private final String FRAUD_COLUMN = "fraud";
+    private final int FRAUDULENT_VALUE = 1;
 
     private LinkedHashMap<String, String> columns;
 
@@ -61,7 +61,7 @@ public class Record {
     }
 
     public boolean isFraudulent() {
-        return this.columns.get(STATE_COLUMN).equalsIgnoreCase(FRAUDULENT_VALUE);
+        return Integer.parseInt(this.columns.get(FRAUD_COLUMN)) == FRAUDULENT_VALUE;
     }
 
     private String toString(LinkedHashMap<String, String> columns) {
@@ -70,7 +70,7 @@ public class Record {
 
     private LinkedHashMap<String, String> getColumnsWithoutState() {
         LinkedHashMap<String, String> columnsClone = new LinkedHashMap<>(this.columns);
-        columnsClone.remove(STATE_COLUMN);
+        columnsClone.remove(FRAUD_COLUMN);
         return columnsClone;
     }
 }

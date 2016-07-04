@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e2bb3c8-570f-43f5-b631-9120b76b378e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/data.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/data.csv" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/adyentest.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/adyentest.csv" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy" afterPath="$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy" />
     </list>
     <ignored path="adyen-catchfraudes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,21 +107,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CatchFraudsEngineSpec.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CatchFraudsEngineSpec.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bot_input.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/bot_input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="-24">
+              <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -125,11 +120,19 @@
       <file leaf-file-name="CatchFrauds.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="37" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Record.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-267">
+              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,20 +140,8 @@
       <file leaf-file-name="CatchFraudsEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -544,7 +535,6 @@
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/GameSerializer.java" />
         <option value="$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/CatchFraudsSpec.groovy" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/state/CatchFraudsStateDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java" />
         <option value="$PROJECT_DIR$/test/java/io/riddles/javainterface/io/TestBotIOHandler.java" />
         <option value="$PROJECT_DIR$/test/java/io/riddles/javainterface/game/player/TestPlayer.java" />
         <option value="$PROJECT_DIR$/test/java/io/riddles/catchfrauds/engine/TestCatchFraudsEngine.java" />
@@ -565,7 +555,6 @@
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/move/CatchFraudsMoveDeserializer.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsProcessor.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java" />
-        <option value="$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy" />
         <option value="$PROJECT_DIR$/logging.properties" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/test/bot_input.txt" />
@@ -581,6 +570,8 @@
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/processor/CatchFraudsProcessor.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java" />
+        <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java" />
+        <option value="$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy" />
       </list>
     </option>
   </component>
@@ -647,9 +638,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -743,6 +731,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -802,78 +794,95 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adyen-catchfrauds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adyen-catchfraudes" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adyen-catchfrauds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adyen-catchfraudes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adyen-catchfrauds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adyen-catchfraudes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="riddles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfraudes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="riddles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfraudes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="riddles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,11 +905,12 @@
       <recent name="io.riddles.javainterface.game" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.adyen-catchfraudes [jar]">
+  <component name="RunManager" selected="JUnit.CatchFraudsEngineSpec.Test running of full game with inputs from files">
     <configuration default="false" name="CatchFraudsEngineSpec.Test reading of checkpoints given by bot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1227,8 +1237,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.CatchFraudsEngineSpec.Test running of full game with inputs from files" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.adyen-catchfraudes [jar]" />
-        <item index="2" class="java.lang.String" itemvalue="Application.CatchFrauds" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CatchFrauds" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.adyen-catchfraudes [jar]" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.CatchFraudsEngineSpec" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.CatchFraudsEngineSpec.Test reading of checkpoints given by bot" />
       </list>
@@ -1254,18 +1264,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.06.10 at 11h 52m 26s.xml">
-      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.06.10 at 11h 59m 24s.xml">
-      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.06.10 at 13h 45m 07s.xml">
-      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.06.10 at 13h 46m 47s.xml">
-      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.06.24 at 09h 53m 24s.xml">
       <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
     </history-entry>
@@ -1282,6 +1280,18 @@
       <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.06.27 at 16h 47m 23s.xml">
+      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.07.04 at 09h 09m 09s.xml">
+      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.07.04 at 09h 12m 44s.xml">
+      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.07.04 at 09h 14m 11s.xml">
+      <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CatchFraudsEngineSpec_Test_running_of_full_game_with_inputs_from_files - 2016.07.04 at 09h 15m 55s.xml">
       <configuration name="CatchFraudsEngineSpec.Test running of full game with inputs from files" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1304,10 +1314,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40729168" sideWeight="0.50426894" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37395832" sideWeight="0.49573106" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.309375" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29166666" sideWeight="0.49573106" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23854166" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21878335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.309375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1318,7 +1329,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20104167" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1366,21 +1376,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/state/AbstractStateDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/CatchFraudsSpec.groovy" />
-    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/jdk1.8.0/jre/lib/rt.jar!/java/util/regex/UnicodeProp.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1552,13 +1547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/adyentest.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/adyentest.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1629,46 +1617,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/test/bot_input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/adyentest.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-267">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="37" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java">
+    <entry file="file://$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/bot_input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="-24">
+          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
           <folding />
         </state>
       </provider>

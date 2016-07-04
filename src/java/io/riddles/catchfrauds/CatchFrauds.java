@@ -32,7 +32,7 @@ import io.riddles.catchfrauds.engine.CatchFraudsEngine;
  */
 public class CatchFrauds {
 
-    private static final String RECORDS_FILE = "/adyentest.csv";
+    private static final String RECORDS_FILE = "/data.csv";
 
     public static void main(String[] args) {
         URL recordsFileUrl = CatchFrauds.class.getResource(RECORDS_FILE);
