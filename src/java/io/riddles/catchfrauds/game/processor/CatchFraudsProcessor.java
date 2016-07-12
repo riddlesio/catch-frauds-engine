@@ -50,7 +50,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     private double scoreDelta; // subtracted from player score for each mistake
 
     public CatchFraudsProcessor(ArrayList<CatchFraudsPlayer> players,
-                                ArrayList<Record> records,int maxCheckPoints) {
+                                ArrayList<Record> records, int maxCheckPoints) {
         super(players);
         this.records = records;
         this.checkPointValues = new ArrayList<>();

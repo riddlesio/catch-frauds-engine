@@ -71,12 +71,12 @@ public class CatchFraudsMoveDeserializer implements Deserializer<CatchFraudsMove
 
     private boolean visitAssessment(String input) throws InvalidMoveException {
         switch (input) {
-            case "refused":
+            case "rejected":
                 return true;
             case "authorized":
                 return false;
             default:
-                throw new InvalidMoveException("Move does not contain authorized or refused");
+                throw new InvalidMoveException("Move does not contain authorized or rejected");
         }
     }
 

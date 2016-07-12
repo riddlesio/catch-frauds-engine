@@ -55,8 +55,8 @@ class CatchFraudsEngineSpec extends Specification {
         }
     }
 
-    def recordsPath = "./test/data.csv"
-    URL recordsFileUrl = TestEngine.class.getResource(recordsPath);
+    def recordsPath = "/home/jim/workspace/adyen-catchfraudes/test/data.csv"
+    URL recordsFileUrl = TestEngine.class.getClassLoader().getResource(recordsPath);
     def engine = new TestEngine(recordsFileUrl, Mock(IOHandler));
 
     def "test engine initialization"() {
@@ -93,7 +93,7 @@ class CatchFraudsEngineSpec extends Specification {
         setup:
         String[] botInputs = new String[1]
 
-        URL recordsFileUrl = TestEngine.class.getResource(recordsPath);
+        URL recordsFileUrl = TestEngine.class.getClassLoader().getResource(recordsPath);
         def wrapperInput = "./test/wrapper_input.txt"
         botInputs[0] = "./test/bot_input.txt"
 
