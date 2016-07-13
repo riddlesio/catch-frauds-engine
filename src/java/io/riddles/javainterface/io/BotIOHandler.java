@@ -82,7 +82,7 @@ public class BotIOHandler extends IOHandler {
      */
     private String getResponse() {
         String message = null;
-        String identifier = String.format("bot %d ", this.botId);
+        String identifier = String.format("bot %d", this.botId);
 
         if (this.reader != null) {
             identifier = "";
@@ -97,9 +97,12 @@ public class BotIOHandler extends IOHandler {
             }
         }
 
-        if (message == null)
-            return null;
+        if (message == null) return null;
 
-        return message.replace(identifier, "");
+        String botResponse = message.replace(identifier, "");
+
+        if (botResponse.isEmpty()) return null;
+
+        return botResponse;
     }
 }

@@ -23,7 +23,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 
-import io.riddles.catchfrauds.CatchFrauds;
 import io.riddles.catchfrauds.game.move.ActionType;
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
 import io.riddles.catchfrauds.game.move.CatchFraudsMoveDeserializer;
@@ -46,7 +45,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     private ArrayList<String> checkPointValues;
     private ArrayList<Record> records;
     private int roundNumber;
-    private boolean gameOver;
+    private boolean isBotShutDown;
     private double scoreDelta; // subtracted from player score for each mistake
 
     public CatchFraudsProcessor(ArrayList<CatchFraudsPlayer> players,
@@ -54,7 +53,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
         super(players);
         this.records = records;
         this.checkPointValues = new ArrayList<>();
-        this.gameOver = false;
+        this.isBotShutDown = false;
         this.scoreDelta = 100.0 / records.size();
 
         MAX_CHECKPOINTS = maxCheckPoints;
@@ -95,7 +94,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
             // stop game if bot returns nothing
             if (response == null) {
-                this.gameOver = true;
+                this.isBotShutDown = true;
             }
         }
 
@@ -104,7 +103,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
     @Override
     public boolean hasGameEnded(CatchFraudsState state) {
-        return this.gameOver || this.roundNumber >= this.records.size();
+        return this.isBotShutDown || this.roundNumber >= this.records.size();
     }
 
     @Override
@@ -114,6 +113,8 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
     @Override
     public double getScore() {
+        if (this.isBotShutDown) return 0.0;
+
         double score = this.getPlayers().get(0).getScore();
         BigDecimal bdScore = new BigDecimal(score);
 
@@ -132,7 +133,13 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     }
 
     private void storeCheckpointInput(CatchFraudsPlayer player, String input) {
-        if (input.length() <= 0) return;
+        if (input == null || input.length() <= 0) {
+            String warning = "No check points received. Bot is shut down.";
+            player.sendWarning(warning);
+            this.isBotShutDown = true;
+
+            return;
+        }
 
         String[] values = input.split(";");
 
@@ -140,7 +147,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
             String warning = String.format("Your bot cannot have more " +
                     "than %d check points. Bot is shut down.", MAX_CHECKPOINTS);
             player.sendWarning(warning);
-            this.gameOver = true;
+            this.isBotShutDown = true;
 
             return;
         }
