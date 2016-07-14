@@ -93,7 +93,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
             this.updateScore(nextState);
 
             // stop game if bot returns nothing
-            if (response == null) {
+            if (response == null || move.isInvalid()) {
                 this.isBotShutDown = true;
             }
         }

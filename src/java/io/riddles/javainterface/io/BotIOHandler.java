@@ -103,6 +103,6 @@ public class BotIOHandler extends IOHandler {
 
         if (botResponse.isEmpty()) return null;
 
-        return botResponse;
+        return botResponse.trim();
     }
 }
