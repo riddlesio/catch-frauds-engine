@@ -72,11 +72,11 @@ public abstract class AbstractGameSerializer<P extends AbstractProcessor, S exte
         game.put("settings", settings);
 
         // add winner
-        String winner = "null";
         if (processor.getWinner() != null) {
-            winner = processor.getWinner().getId() + "";
+            game.put("winner", processor.getWinner().getId() + "");
+        } else {
+            game.put("winner", JSONObject.NULL);
         }
-        game.put("winner", winner);
 
         // add score
         game.put("score", processor.getScore());

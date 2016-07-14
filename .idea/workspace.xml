@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6e2bb3c8-570f-43f5-b631-9120b76b378e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/processor/CatchFraudsProcessor.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/processor/CatchFraudsProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/javainterface/io/BotIOHandler.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/javainterface/io/BotIOHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/bot_input.txt" afterPath="$PROJECT_DIR$/test/bot_input.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java" afterPath="$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java" />
     </list>
     <ignored path="adyen-catchfraudes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,11 +102,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CatchFraudsProcessor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CatchFraudsProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/processor/CatchFraudsProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="439">
               <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractStateSerializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/state/AbstractStateSerializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatchFraudsGameSerializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractGameSerializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -143,16 +174,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bot_input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/bot_input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BotIOHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/io/BotIOHandler.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -168,16 +189,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="557">
               <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CatchFrauds.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -597,7 +608,6 @@
         <option value="$PROJECT_DIR$/src/java/io/riddles/javainterface/serialize/Serializer.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/move/CheckPoint.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsProcessor.java" />
-        <option value="$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java" />
         <option value="$PROJECT_DIR$/logging.properties" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/state/CatchFraudsStateSerializer.java" />
@@ -607,7 +617,6 @@
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/state/CatchFraudsState.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/player/CatchFraudsPlayer.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/javainterface/game/processor/AbstractProcessor.java" />
-        <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/CatchFrauds.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/data/Record.java" />
         <option value="$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsEngineSpec.groovy" />
@@ -618,6 +627,8 @@
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/move/CatchFraudsMoveDeserializer.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/javainterface/io/BotIOHandler.java" />
         <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/engine/CatchFraudsEngine.java" />
+        <option value="$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java" />
+        <option value="$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java" />
       </list>
     </option>
   </component>
@@ -856,6 +867,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="javainterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfraudes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="riddles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="catchfrauds" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -887,6 +928,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adyen-catchfraudes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="riddles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catchfrauds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="state" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1490,13 +1565,6 @@
     <entry file="file://$PROJECT_DIR$/test/java/io/riddles/javainterface/engine/AbstractTestEngine.java" />
     <entry file="file://$PROJECT_DIR$/test/java/io/riddles/catchfrauds/engine/CatchFraudsTestEngine.java" />
     <entry file="file://$PROJECT_DIR$/test/groovy/io/riddles/catchfrauds/engine/CatchFraudsTestEngineSpec.groovy" />
-    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/state/AbstractStateSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/move/CheckPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1584,13 +1652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/exception/InvalidMoveException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1599,13 +1660,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/adyentest.csv" />
-    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/state/AbstractState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1799,6 +1853,32 @@
         <state relative-caret-position="439">
           <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/state/AbstractStateSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/javainterface/game/AbstractGameSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/io/riddles/catchfrauds/game/CatchFraudsGameSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
