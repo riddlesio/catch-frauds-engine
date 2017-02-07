@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2017 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -17,23 +17,30 @@
  *     file that was distributed with this source code.
  */
 
-package io.riddles.catchfrauds;
-
-import java.io.FileNotFoundException;
-
-import io.riddles.catchfrauds.engine.CatchFraudsEngine;
+package io.riddles.javainterface.configuration;
 
 /**
- * io.riddles.catchfrauds.CatchFrauds - Created on 2-6-16
+ * ConfigurationItem - Created on 30-8-16
  *
  * [description]
  *
- * @author jim
+ * @author Jim van Eeden - jim@riddles.io
  */
-public class CatchFrauds {
+class ConfigurationItem {
 
-    public static void main(String[] args) throws FileNotFoundException, NullPointerException {
-        CatchFraudsEngine engine = new CatchFraudsEngine();
-        engine.run();
+    private Object value;
+    private String type;
+
+    ConfigurationItem(String type, Object value) {
+        this.value = value;
+        this.type = type;
+    }
+
+    String getType() {
+        return type;
+    }
+
+    Object getValue() {
+        return value;
     }
 }

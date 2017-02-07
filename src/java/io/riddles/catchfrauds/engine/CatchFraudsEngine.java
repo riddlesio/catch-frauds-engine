@@ -20,17 +20,20 @@
 package io.riddles.catchfrauds.engine;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
+import io.riddles.catchfrauds.CatchFrauds;
 import io.riddles.catchfrauds.game.CatchFraudsGameSerializer;
 import io.riddles.catchfrauds.game.data.Record;
 import io.riddles.catchfrauds.game.player.CatchFraudsPlayer;
 import io.riddles.catchfrauds.game.state.CatchFraudsState;
 import io.riddles.catchfrauds.game.processor.CatchFraudsProcessor;
 import io.riddles.javainterface.engine.AbstractEngine;
+import io.riddles.javainterface.exception.ConfigurationException;
 
 /**
  * io.riddles.catchfrauds.engine.CatchFraudsEngine - Created on 2-6-16
@@ -42,17 +45,14 @@ import io.riddles.javainterface.engine.AbstractEngine;
 public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         CatchFraudsPlayer, CatchFraudsState> {
 
+    private final String DEFAULT_DATA_FILE = "/data.csv";
     private final int MAX_CHECKPOINTS = 20;
     private ArrayList<Record> records;
 
-    public CatchFraudsEngine(URL recordsFile) {
-        super();
-        this.records = readRecordsFile(recordsFile);
-    }
-
-    public CatchFraudsEngine(URL recordsFile, String wrapperFile, String[] botFiles) {
-        super(wrapperFile, botFiles);
-        this.records = readRecordsFile(recordsFile);
+    @Override
+    protected void setup() {
+        super.setup();
+        this.records = readRecordsFile();
     }
 
     @Override
@@ -82,11 +82,20 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         return serializer.traverseToString(this.processor, initialState);
     }
 
-    private ArrayList<Record> readRecordsFile(URL recordsFile) {
+    private ArrayList<Record> readRecordsFile() {
         ArrayList<Record> records = new ArrayList<>();
 
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(recordsFile.openStream()));
+            InputStream fileInputStream;
+
+            try {
+                String filePath = configuration.getString("dataFile");
+                fileInputStream = new FileInputStream(filePath);
+            } catch (ConfigurationException ex) {
+                fileInputStream = CatchFrauds.class.getResourceAsStream(DEFAULT_DATA_FILE);
+            }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
             String line;
             String[] recordFormat = null;
 

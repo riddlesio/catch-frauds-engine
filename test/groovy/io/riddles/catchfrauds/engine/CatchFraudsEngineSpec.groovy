@@ -33,13 +33,13 @@ class CatchFraudsEngineSpec extends Specification {
 
     class TestEngine extends CatchFraudsEngine {
 
-        TestEngine(URL recordsFileUrl, IOHandler ioHandler) {
-            super(recordsFileUrl);
+        TestEngine(IOHandler ioHandler) {
+            super();
             this.ioHandler = ioHandler;
         }
 
-        TestEngine(String recordsFile, String wrapperFile, String[] botFiles) {
-            super(recordsFile, wrapperFile, botFiles)
+        TestEngine(String wrapperFile, String[] botFiles) {
+            super(wrapperFile, botFiles)
         }
 
         IOHandler getIOHandler() {

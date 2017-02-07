@@ -23,9 +23,11 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import io.riddles.javainterface.configuration.Configuration;
 import io.riddles.javainterface.game.player.AbstractPlayer;
 import io.riddles.javainterface.game.processor.AbstractProcessor;
 import io.riddles.javainterface.game.state.AbstractState;
@@ -49,6 +51,7 @@ public abstract class AbstractEngine<Pr extends AbstractProcessor,
         Pl extends AbstractPlayer, S extends AbstractState> {
 
     protected final static Logger LOGGER = Logger.getLogger(AbstractEngine.class.getName());
+    public final static Configuration configuration = new Configuration();
 
     private String[] botInputFiles;
 
@@ -85,6 +88,14 @@ public abstract class AbstractEngine<Pr extends AbstractProcessor,
         LOGGER.info("Starting...");
 
         setup();
+
+        this.processor = createProcessor();
+
+        LOGGER.info("Got start. Sending game settings to bots...");
+
+        this.players.forEach(this::sendGameSettings);
+
+        LOGGER.info("Settings sent. Setting up engine done...");
 
         if (this.processor == null) {
             throw new NullPointerException("Processor has not been set");
@@ -124,14 +135,6 @@ public abstract class AbstractEngine<Pr extends AbstractProcessor,
         } catch(IOException ex) {
             LOGGER.log(Level.SEVERE, ex.toString(), ex);
         }
-
-        this.processor = createProcessor();
-
-        LOGGER.info("Got start. Sending game settings to bots...");
-
-        this.players.forEach(this::sendGameSettings);
-
-        LOGGER.info("Settings sent. Setting up engine done...");
     }
 
     /**
@@ -174,16 +177,30 @@ public abstract class AbstractEngine<Pr extends AbstractProcessor,
     protected void parseSetupInput(String input) {
         String[] split = input.split(" ");
 
-        if (split[0].equals("bot_ids")) {
-            String[] ids = split[1].split(",");
-            for (int i = 0; i < ids.length; i++) {
-                Pl player = createPlayer(Integer.parseInt(ids[i]));
+        String command = split[0];
+        switch (command) {
+            case "bot_ids":
+                String[] ids = split[1].split(",");
+                for (int i = 0; i < ids.length; i++) {
+                    Pl player = createPlayer(Integer.parseInt(ids[i]));
 
-                if (this.botInputFiles != null)
-                    player.setInputFile(this.botInputFiles[i]);
+                    if (this.botInputFiles != null)
+                        player.setInputFile(this.botInputFiles[i]);
 
-                this.players.add(player);
-            }
+                    this.players.add(player);
+                }
+                break;
+            case "configuration":
+            case "config":
+                JSONObject config = new JSONObject(split[1].trim());
+                Iterator<String> keys = config.keys();
+
+                while (keys.hasNext()) {
+                    String key = keys.next();
+                    JSONObject configValue = config.getJSONObject(key);
+                    configuration.put(key, configValue);
+                }
+                break;
         }
     }
 

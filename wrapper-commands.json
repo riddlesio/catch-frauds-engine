@@ -1,0 +1,22 @@
+{
+  "wrapper": {
+    "timebankMax": 10000,
+    "timePerMove": 100,
+    "maxTimeouts": 2,
+    "resultFile": "./resultfile.json"
+  },
+  "match": {
+    "bots": [{
+      "command": "java -cp /home/jim/workspace/catchfrauds-starterbot/build/classes/main bot.BotStarter"
+    }],
+    "engine": {
+      "command": "java -jar /home/jim/workspace/adyen-catchfrauds/build/libs/adyen-catchfrauds-1.0.0.jar",
+      "configuration": {
+        "dataFile": {
+          "type": "string",
+          "value": "/home/jim/workspace/adyen-catchfrauds/src/resources/data.csv"
+        }
+      }
+    }
+  }
+}
