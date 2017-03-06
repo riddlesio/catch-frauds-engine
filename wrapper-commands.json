@@ -7,14 +7,14 @@
   },
   "match": {
     "bots": [{
-      "command": "java -cp /home/jim/workspace/catchfrauds-starterbot/build/classes/main bot.BotStarter"
+      "command": "java -jar /home/jim/workspace/catchfrauds-starterbot/build/libs/catchfraudes-starterbot-1.0.0.jar"
     }],
     "engine": {
-      "command": "java -jar /home/jim/workspace/adyen-catchfrauds/build/libs/adyen-catchfrauds-1.0.0.jar",
+      "command": "java -jar /home/jim/workspace/adyen-catchfrauds/build/libs/adyen-catchfrauds-1.1.1.jar",
       "configuration": {
         "dataFile": {
           "type": "string",
-          "value": "/home/jim/workspace/adyen-catchfrauds/src/resources/data.csv"
+          "value": "/home/jim/Documents/catchfrauds-test-set-final.csv"
         }
       }
     }

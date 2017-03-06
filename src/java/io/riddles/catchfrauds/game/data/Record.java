@@ -37,7 +37,7 @@ public class Record {
 
     public Record(String[] format, String input) {
         this.columns = new LinkedHashMap<>();
-        String[] values = input.split(",");
+        String[] values = input.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
 
         if (format.length != values.length) {
             throw new InstantiationError("Record input does not fit record format");

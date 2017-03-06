@@ -45,6 +45,7 @@ import io.riddles.javainterface.exception.ConfigurationException;
 public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         CatchFraudsPlayer, CatchFraudsState> {
 
+    public static final int DISPLAY_STATES = 50;
     private final String DEFAULT_DATA_FILE = "/data.csv";
     private final int MAX_CHECKPOINTS = 20;
     private ArrayList<Record> records;
@@ -100,8 +101,9 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
             String[] recordFormat = null;
 
             while ((line = br.readLine()) != null) {
+                System.err.println("! " + line);
                 if (recordFormat == null) { // It's the first line, i.e. the record format
-                    recordFormat = line.split(",");
+                    recordFormat = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
                 } else { // normal record
                     records.add(new Record(recordFormat, line));
                 }
