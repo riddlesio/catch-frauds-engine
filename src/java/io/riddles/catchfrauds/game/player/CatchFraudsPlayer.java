@@ -30,20 +30,28 @@ import io.riddles.javainterface.game.player.AbstractPlayer;
  */
 public class CatchFraudsPlayer extends AbstractPlayer {
 
-    private double score;
+    private double detectedFrauds;
+    private double falsePositives;
 
     public CatchFraudsPlayer(int id) {
         super(id);
-        this.score = 100.0;
+        this.detectedFrauds = 0.0;
+        this.falsePositives = 0.0;
     }
 
-    public void updateScore(boolean isFraudulent, boolean isRefused, double delta) {
-        if ((isFraudulent && !isRefused) || (!isFraudulent && isRefused)) {
-            this.score -= delta;
-        }
+    public void incrementDetectedFrauds() {
+        this.detectedFrauds++;
     }
 
-    public double getScore() {
-        return this.score;
+    public void incrementFalsePositives() {
+        this.falsePositives++;
+    }
+
+    public double getDetectedFrauds() {
+        return this.detectedFrauds;
+    }
+
+    public double getFalsePositives() {
+        return this.falsePositives;
     }
 }

@@ -46,7 +46,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     private ArrayList<Record> records;
     private int roundNumber;
     private boolean isBotShutDown;
-    private double scoreDelta; // subtracted from player score for each mistake
+    private double totalFraudulentRecords;
 
     public CatchFraudsProcessor(ArrayList<CatchFraudsPlayer> players,
                                 ArrayList<Record> records, int maxCheckPoints) {
@@ -54,9 +54,12 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
         this.records = records;
         this.checkPointValues = new ArrayList<>();
         this.isBotShutDown = false;
-        this.scoreDelta = 100.0 / records.size();
 
         MAX_CHECKPOINTS = maxCheckPoints;
+
+        this.totalFraudulentRecords = (double) records.stream()
+                .filter(Record::isFraudulent)
+                .count();
     }
 
     @Override
@@ -115,10 +118,15 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
     public double getScore() {
         if (this.isBotShutDown) return 0.0;
 
-        double score = this.getPlayers().get(0).getScore();
-        BigDecimal bdScore = new BigDecimal(score);
+        CatchFraudsPlayer player = this.getPlayers().get(0);
 
-        return bdScore.setScale(2, RoundingMode.HALF_UP).doubleValue();
+        double c1 = 2.0;
+        double penalty = (100 * c1 * Math.pow(player.getFalsePositives(), 2)) / this.records.size();
+        double score = ((player.getDetectedFrauds() / this.totalFraudulentRecords) * 100) - penalty;
+
+        score = Math.max(0.0, score);
+
+        return new BigDecimal(score).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     public ArrayList<String> getCheckPointValues() {
@@ -129,7 +137,13 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
         CatchFraudsMove move = state.getMoves().get(0);
         CatchFraudsPlayer player = move.getPlayer();
 
-        player.updateScore(state.isFraudulent(), move.isRefused(), this.scoreDelta);
+        if (state.isFraudulent() && move.isRefused()) {
+            player.incrementDetectedFrauds();
+        }
+
+        if (!state.isFraudulent() && move.isRefused()) {
+            player.incrementFalsePositives();
+        }
     }
 
     private void storeCheckpointInput(CatchFraudsPlayer player, String input) {
