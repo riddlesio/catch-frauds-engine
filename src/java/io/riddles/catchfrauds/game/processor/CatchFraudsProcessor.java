@@ -144,9 +144,6 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
                 ? ((player.getDetectedFrauds() / this.totalFraudulentRecords) * 100) - penalty
                 : 100 - penalty;
 
-        System.err.println(player.getFalsePositives() + " " + this.totalFraudulentRecords +
-        " " + recordCount + " " + player.getDetectedFrauds() + ": " + penalty + " " + score);
-
         score = Math.max(0.0, score);
 
         return new BigDecimal(score).setScale(2, RoundingMode.HALF_UP).doubleValue();
