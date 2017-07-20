@@ -23,8 +23,11 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.UUID;
 import java.util.logging.Level;
 
 import io.riddles.catchfrauds.CatchFrauds;
@@ -46,14 +49,22 @@ import io.riddles.javainterface.exception.ConfigurationException;
 public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         CatchFraudsPlayer, CatchFraudsState> {
 
-    public static final int DISPLAY_STATES = 50;
+    public static SecureRandom RANDOM;
+
     private final String DEFAULT_DATA_FILE = "/data.csv";
     private final int MAX_CHECKPOINTS = 20;
     private ArrayList<Record> records;
 
+    public CatchFraudsEngine() {
+        configuration.put("recordCount", -1);
+        configuration.put("seed", UUID.randomUUID().toString());
+    }
+
     @Override
     protected void setup() {
         super.setup();
+        setRandomSeed();
+
         this.records = readRecordsFile();
     }
 
@@ -102,7 +113,6 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
             String[] recordFormat = null;
 
             while ((line = br.readLine()) != null) {
-                System.err.println("! " + line);
                 if (recordFormat == null) { // It's the first line, i.e. the record format
                     recordFormat = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
                 } else { // normal record
@@ -115,5 +125,17 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
         }
 
         return records;
+    }
+
+    private void setRandomSeed() {
+        try {
+            RANDOM = SecureRandom.getInstance("SHA1PRNG");
+        } catch (NoSuchAlgorithmException ex) {
+            LOGGER.severe("Not able to use SHA1PRNG, using default algorithm");
+            RANDOM = new SecureRandom();
+        }
+        String seed = configuration.getString("seed");
+        LOGGER.info("RANDOM SEED IS: " + seed);
+        RANDOM.setSeed(seed.getBytes());
     }
 }

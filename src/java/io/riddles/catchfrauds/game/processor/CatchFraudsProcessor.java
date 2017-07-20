@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 
+import io.riddles.catchfrauds.engine.CatchFraudsEngine;
 import io.riddles.catchfrauds.game.move.ActionType;
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
 import io.riddles.catchfrauds.game.move.CatchFraudsMoveDeserializer;
@@ -44,6 +45,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
     private ArrayList<String> checkPointValues;
     private ArrayList<Record> records;
+    private ArrayList<Record> poppingRecords;
     private int roundNumber;
     private boolean isBotShutDown;
     private double totalFraudulentRecords;
@@ -52,14 +54,12 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
                                 ArrayList<Record> records, int maxCheckPoints) {
         super(players);
         this.records = records;
+        this.poppingRecords = new ArrayList<>(records);
         this.checkPointValues = new ArrayList<>();
         this.isBotShutDown = false;
+        this.totalFraudulentRecords = 0;
 
         MAX_CHECKPOINTS = maxCheckPoints;
-
-        this.totalFraudulentRecords = (double) records.stream()
-                .filter(Record::isFraudulent)
-                .count();
     }
 
     @Override
@@ -79,7 +79,11 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
         for (CatchFraudsPlayer player : this.players) {
 
-            Record record = this.records.get(this.roundNumber - 1);
+            Record record = getNextRecord();
+
+            if (record.isFraudulent()) {
+                this.totalFraudulentRecords++;
+            }
 
             // send next record and ask bot's assessment of the record
             player.sendUpdate("next_record", player, record.toBotString());
@@ -106,7 +110,17 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
     @Override
     public boolean hasGameEnded(CatchFraudsState state) {
-        return this.isBotShutDown || this.roundNumber >= this.records.size();
+        int recordCount = CatchFraudsEngine.configuration.getInt("recordCount");
+
+        if (this.isBotShutDown) {
+            return true;
+        }
+
+        if (recordCount < 0) {
+            return this.roundNumber >= this.records.size();
+        }
+
+        return this.roundNumber >= recordCount;
     }
 
     @Override
@@ -120,9 +134,18 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
         CatchFraudsPlayer player = this.getPlayers().get(0);
 
+        int recordCount = CatchFraudsEngine.configuration.getInt("recordCount") < 0
+                ? this.records.size()
+                : CatchFraudsEngine.configuration.getInt("recordCount");
+
         double c1 = 2.0;
-        double penalty = (100 * c1 * Math.pow(player.getFalsePositives(), 2)) / this.records.size();
-        double score = ((player.getDetectedFrauds() / this.totalFraudulentRecords) * 100) - penalty;
+        double penalty = (100 * c1 * Math.pow(player.getFalsePositives(), 2)) / recordCount;
+        double score = this.totalFraudulentRecords > 0
+                ? ((player.getDetectedFrauds() / this.totalFraudulentRecords) * 100) - penalty
+                : 100 - penalty;
+
+        System.err.println(player.getFalsePositives() + " " + this.totalFraudulentRecords +
+        " " + recordCount + " " + player.getDetectedFrauds() + ": " + penalty + " " + score);
 
         score = Math.max(0.0, score);
 
@@ -131,6 +154,17 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
 
     public ArrayList<String> getCheckPointValues() {
         return this.checkPointValues;
+    }
+
+    private Record getNextRecord() {
+        // Just get all the records one by one
+        if (CatchFraudsEngine.configuration.getInt("recordCount") < 0) {
+            return this.records.get(this.roundNumber - 1);
+        }
+
+        // Select random record
+        int randomIndex = CatchFraudsEngine.RANDOM.nextInt(this.poppingRecords.size());
+        return this.poppingRecords.remove(randomIndex);
     }
 
     private void updateScore(CatchFraudsState state) {

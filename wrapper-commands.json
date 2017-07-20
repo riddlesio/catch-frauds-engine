@@ -11,7 +11,17 @@
       "command": "java -jar /home/jim/workspace/catchfrauds-starterbot/build/libs/catchfraudes-starterbot-1.0.0.jar"
     }],
     "engine": {
-      "command": "java -jar /home/jim/workspace/adyen-catchfrauds/build/libs/adyen-catchfrauds-1.1.2.jar"
+      "command": "java -jar /home/jim/workspace/adyen-catchfrauds/build/libs/adyen-catchfrauds-1.2.0.jar",
+      "configuration": {
+        "dataFile": {
+          "type": "string",
+          "value": "/home/jim/Documents/catchfrauds-training-set-2.csv"
+        },
+        "recordCount": {
+          "type": "integer",
+          "value": 100
+        }
+      }
     }
   }
 }
