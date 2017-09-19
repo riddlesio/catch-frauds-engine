@@ -15,11 +15,7 @@
       "configuration": {
         "dataFile": {
           "type": "string",
-          "value": "/home/jim/Documents/catchfrauds-training-set-2.csv"
-        },
-        "recordCount": {
-          "type": "integer",
-          "value": 100
+          "value": "/home/jim/Documents/catchfrauds-test-set-2.csv"
         }
       }
     }

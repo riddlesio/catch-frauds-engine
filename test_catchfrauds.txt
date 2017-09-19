@@ -1,0 +1,9 @@
+settings timebank 5000
+settings time_per_move 500
+settings player_names player1
+settings your_bot player1
+settings max_checkpoints 20
+settings record_format txid,amount,shopper_country,issuer_country,shopper_email,creation_date,card_number_hash,txvariantcode,bin,currency
+action checkpoints 5000
+update player1 next_record 19,21545,(unknown),US,ricardoamana@gmail.com,03/14/16 03:49 PM,70b698b2251bq,visadebit,456534,USD
+action record 5000
