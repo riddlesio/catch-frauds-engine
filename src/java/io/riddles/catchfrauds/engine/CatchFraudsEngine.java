@@ -26,7 +26,6 @@ import java.io.InputStreamReader;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.UUID;
 import java.util.logging.Level;
 
@@ -58,6 +57,7 @@ public class CatchFraudsEngine extends AbstractEngine<CatchFraudsProcessor,
     public CatchFraudsEngine() {
         configuration.put("recordCount", -1);
         configuration.put("seed", UUID.randomUUID().toString());
+        configuration.put("c1Value", 0.1);
     }
 
     @Override

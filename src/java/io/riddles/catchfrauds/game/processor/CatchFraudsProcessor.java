@@ -138,7 +138,7 @@ public class CatchFraudsProcessor extends AbstractProcessor<CatchFraudsPlayer, C
                 ? this.records.size()
                 : CatchFraudsEngine.configuration.getInt("recordCount");
 
-        double c1 = 2.0;
+        double c1 = CatchFraudsEngine.configuration.getDouble("c1Value");
         double penalty = (100 * c1 * Math.pow(player.getFalsePositives(), 2)) / recordCount;
         double score = this.totalFraudulentRecords > 0
                 ? ((player.getDetectedFrauds() / this.totalFraudulentRecords) * 100) - penalty

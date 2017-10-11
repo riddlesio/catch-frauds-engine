@@ -15,7 +15,7 @@
       "configuration": {
         "dataFile": {
           "type": "string",
-          "value": "/home/jim/Documents/catchfrauds-test-set-2.csv"
+          "value": "/home/jim/Documents/catchfrauds-training-set.csv"
         }
       }
     }

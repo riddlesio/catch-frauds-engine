@@ -22,10 +22,6 @@ package io.riddles.catchfrauds.game;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import io.riddles.catchfrauds.engine.CatchFraudsEngine;
 import io.riddles.catchfrauds.game.processor.CatchFraudsProcessor;
 import io.riddles.catchfrauds.game.state.CatchFraudsState;
 import io.riddles.catchfrauds.game.state.CatchFraudsStateSerializer;
