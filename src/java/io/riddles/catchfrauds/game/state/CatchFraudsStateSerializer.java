@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
-import io.riddles.catchfrauds.game.move.CheckPoint;
+import io.riddles.catchfrauds.game.checkpoint.CheckPoint;
 import io.riddles.javainterface.game.state.AbstractStateSerializer;
 
 /**
@@ -47,14 +47,20 @@ public class CatchFraudsStateSerializer extends AbstractStateSerializer<CatchFra
 
     private JSONObject visitState(CatchFraudsState state) throws NullPointerException {
         JSONObject stateJson = new JSONObject();
+        CatchFraudsPlayerState playerState = state.getPlayerStates().get(0);
+        CatchFraudsMove move = playerState.getMove();
+
         stateJson.put("round", state.getRoundNumber());
         stateJson.put("isFraudulent", state.isFraudulent());
-
-        CatchFraudsMove move = (CatchFraudsMove) state.getMoves().get(0);
-
         if (move.getException() == null) {
             stateJson.put("isRefused", move.isRefused());
-            stateJson.put("isCheckpointApproved", visitCheckPoints(move.getCheckPoints()));
+
+            if (move.getCheckPointId() == null) {
+                stateJson.put("blockingCheckPointId", JSONObject.NULL);
+            } else {
+                stateJson.put("blockingCheckPointId", move.getCheckPointId());
+            }
+
             stateJson.put("exception", JSONObject.NULL);
         } else {
             stateJson.put("isRefused", JSONObject.NULL);
@@ -63,15 +69,5 @@ public class CatchFraudsStateSerializer extends AbstractStateSerializer<CatchFra
         }
 
         return stateJson;
-    }
-
-    private JSONArray visitCheckPoints(CheckPoint[] checkPoints) throws NullPointerException {
-        JSONArray checkPointsJson = new JSONArray();
-
-        for (CheckPoint checkPoint : checkPoints) {
-            checkPointsJson.put(checkPoint.isApproved());
-        }
-
-        return checkPointsJson;
     }
 }

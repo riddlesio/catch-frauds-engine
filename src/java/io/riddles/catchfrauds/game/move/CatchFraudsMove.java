@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -19,8 +19,7 @@
 
 package io.riddles.catchfrauds.game.move;
 
-import io.riddles.catchfrauds.game.player.CatchFraudsPlayer;
-import io.riddles.javainterface.exception.InvalidMoveException;
+import io.riddles.javainterface.exception.InvalidInputException;
 import io.riddles.javainterface.game.move.AbstractMove;
 
 /**
@@ -30,26 +29,30 @@ import io.riddles.javainterface.game.move.AbstractMove;
  *
  * @author jim
  */
-public class CatchFraudsMove extends AbstractMove<CatchFraudsPlayer> {
+public class CatchFraudsMove extends AbstractMove {
 
     private boolean isRefused;
-    private CheckPoint[] checkPoints;
+    private Integer checkPointId;
 
-    public CatchFraudsMove(CatchFraudsPlayer player, boolean isRefused, CheckPoint[] checkPoints) {
-        super(player);
-        this.isRefused = isRefused;
-        this.checkPoints = checkPoints;
+    public CatchFraudsMove() {
+        this.isRefused = false;
+        this.checkPointId = null;
     }
 
-    public CatchFraudsMove(CatchFraudsPlayer player, InvalidMoveException exception) {
-        super(player, exception);
+    public CatchFraudsMove(int checkPointId) {
+        this.isRefused = true;
+        this.checkPointId = checkPointId;
+    }
+
+    public CatchFraudsMove(InvalidInputException exception) {
+        super(exception);
     }
 
     public boolean isRefused() {
         return this.isRefused;
     }
 
-    public CheckPoint[] getCheckPoints() {
-        return this.checkPoints;
+    public Integer getCheckPointId() {
+        return this.checkPointId;
     }
 }

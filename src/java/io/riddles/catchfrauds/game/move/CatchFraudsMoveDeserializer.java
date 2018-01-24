@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -19,11 +19,7 @@
 
 package io.riddles.catchfrauds.game.move;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import io.riddles.catchfrauds.game.player.CatchFraudsPlayer;
-import io.riddles.javainterface.exception.InvalidMoveException;
+import io.riddles.javainterface.exception.InvalidInputException;
 import io.riddles.javainterface.serialize.Deserializer;
 
 /**
@@ -35,79 +31,63 @@ import io.riddles.javainterface.serialize.Deserializer;
  */
 public class CatchFraudsMoveDeserializer implements Deserializer<CatchFraudsMove> {
 
-    private CatchFraudsPlayer player;
-    private int checkPointCount;
-
-    public CatchFraudsMoveDeserializer(CatchFraudsPlayer player, int checkPointCount) {
-        this.player = player;
-        this.checkPointCount = checkPointCount;
-    }
-
     @Override
     public CatchFraudsMove traverse(String string) {
+        return null;
+    }
+
+    public CatchFraudsMove traverse(String string, int checkPointCount) {
         try {
-            return visitMove(string);
-        } catch (InvalidMoveException ex) {
-            return new CatchFraudsMove(this.player, ex);
+            return visitMove(string, checkPointCount);
+        } catch (InvalidInputException ex) {
+            return new CatchFraudsMove(ex);
         } catch (Exception ex) {
-            return new CatchFraudsMove(
-                    this.player, new InvalidMoveException("Failed to parse move"));
+            return new CatchFraudsMove(new InvalidInputException("Failed to parse move"));
         }
     }
 
-    private CatchFraudsMove visitMove(String input) throws InvalidMoveException {
+    private CatchFraudsMove visitMove(String input, int checkPointCount) throws InvalidInputException {
         String[] split = input.split(" ");
 
         boolean isRefused = visitAssessment(split[0]);
 
-        String checkPointInput = null;
-        if (split.length > 1) {
-            checkPointInput = split[1];
+        if (!isRefused) {
+            return new CatchFraudsMove();
         }
-        CheckPoint[] checkPoints = visitCheckPoints(checkPointInput);
 
-        return new CatchFraudsMove(this.player, isRefused, checkPoints);
+        if (split.length != 2) {
+            throw new InvalidInputException("The checkpoint that the " +
+                    "assessment failed on is not given");
+        }
+
+        return new CatchFraudsMove(visitCheckPoint(split[1], checkPointCount));
     }
 
-    private boolean visitAssessment(String input) throws InvalidMoveException {
+    private boolean visitAssessment(String input) throws InvalidInputException {
         switch (input) {
             case "rejected":
                 return true;
             case "authorized":
                 return false;
             default:
-                throw new InvalidMoveException("Move does not contain authorized or rejected");
+                throw new InvalidInputException("Move does not contain authorized or rejected");
         }
     }
 
-    private CheckPoint[] visitCheckPoints(String input) throws InvalidMoveException {
-        CheckPoint[] checkPoints = new CheckPoint[this.checkPointCount];
+    private int visitCheckPoint(String input, int checkPointCount) throws InvalidInputException {
+        int checkPointId;
 
-        if (input == null) {
-            for (int i = 0; i < checkPoints.length; i++) {
-                checkPoints[i] = new CheckPoint(true);
-            }
-            return checkPoints;
+        try {
+            checkPointId = Integer.parseInt(input);
+        } catch (Exception ex) {
+            throw new InvalidInputException("Can't parse the checkpoint that the " +
+                    "assessment failed on");
         }
 
-        String[] split = input.split(",");
-        ArrayList<Integer> indexes = new ArrayList<>();
-        for (String index : split) {
-            try {
-                indexes.add(Integer.parseInt(index));
-            } catch (Exception ex) {
-                throw new InvalidMoveException("Can't parse failed checkpoints");
-            }
+        if (checkPointId >= checkPointCount) {
+            throw new InvalidInputException("Given checkpoint ID not found");
         }
 
-        for (int i = 0; i < checkPoints.length; i++) {
-            if (indexes.contains(i + 1)) {
-                checkPoints[i] = new CheckPoint(false);
-            } else {
-                checkPoints[i] = new CheckPoint(true);
-            }
-        }
-
-        return checkPoints;
+        return checkPointId;
     }
 }

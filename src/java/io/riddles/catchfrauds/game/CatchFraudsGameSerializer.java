@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -22,7 +22,14 @@ package io.riddles.catchfrauds.game;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import io.riddles.catchfrauds.engine.CatchFraudsEngine;
+import io.riddles.catchfrauds.game.checkpoint.CheckPoint;
 import io.riddles.catchfrauds.game.processor.CatchFraudsProcessor;
+import io.riddles.catchfrauds.game.state.CatchFraudsPlayerState;
 import io.riddles.catchfrauds.game.state.CatchFraudsState;
 import io.riddles.catchfrauds.game.state.CatchFraudsStateSerializer;
 import io.riddles.javainterface.game.AbstractGameSerializer;
@@ -34,33 +41,78 @@ import io.riddles.javainterface.game.AbstractGameSerializer;
  *
  * @author jim
  */
-public class CatchFraudsGameSerializer extends
-        AbstractGameSerializer<CatchFraudsProcessor, CatchFraudsState> {
+public class CatchFraudsGameSerializer extends AbstractGameSerializer<CatchFraudsProcessor, CatchFraudsState> {
 
     @Override
     public String traverseToString(CatchFraudsProcessor processor, CatchFraudsState initialState) {
-        JSONObject game = new JSONObject();
-        game = addDefaultJSON(game, processor);
+        CatchFraudsStateSerializer serializer = new CatchFraudsStateSerializer();
 
-        // add checkpoints
-        JSONArray checkPoints = new JSONArray();
-        for (String checkPointValue : processor.getCheckPointValues()) {
-            JSONObject checkPoint = new JSONObject();
-            checkPoint.put("description", checkPointValue);
-            checkPoints.put(checkPoint);
-        }
-        ((JSONObject) game.get("settings")).put("checkpoints", checkPoints);
+        JSONObject game = new JSONObject();
+        game = addDefaultJSON(initialState, game, processor);
 
         // add all states
         JSONArray states = new JSONArray();
         CatchFraudsState state = initialState;
-        CatchFraudsStateSerializer serializer = new CatchFraudsStateSerializer();
         while (state.hasNextState()) {
             state = (CatchFraudsState) state.getNextState();
             states.put(serializer.traverseToJson(state));
         }
+
+        CatchFraudsPlayerState playerState = state.getPlayerStates().get(0);
+
         game.put("states", states);
+        game.put("checkpoints", visitCheckPoints(playerState.getCheckPoints()));
+        game.put("fraudTypes", visitFraudTypes(CatchFraudsEngine.FRAUD_TYPES));
 
         return game.toString();
+    }
+
+    private JSONArray visitCheckPoints(ArrayList<CheckPoint> checkPoints) {
+        JSONArray checkPointsArray = new JSONArray();
+
+        for (CheckPoint checkPoint : checkPoints) {
+            JSONObject checkPointJson = new JSONObject();
+
+            checkPointJson.put("id", checkPoint.getId());
+            checkPointJson.put("description", checkPoint.getDescription());
+            checkPointJson.put("falsePositives", checkPoint.getFalsePositives());
+            checkPointJson.put("frauds", visitCheckPointFrauds(checkPoint));
+
+            checkPointsArray.put(checkPointJson);
+        }
+
+        return checkPointsArray;
+    }
+
+    private JSONArray visitCheckPointFrauds(CheckPoint checkPoint) {
+        JSONArray frauds = new JSONArray();
+
+        int[] detectedFrauds = checkPoint.getDetectedFrauds();
+
+        for (int type = 1; type < detectedFrauds.length; type++) {
+            JSONObject fraud = new JSONObject();
+
+            fraud.put("type", type);
+            fraud.put("detectedFrauds", detectedFrauds[type]);
+
+            frauds.put(fraud);
+        }
+
+        return frauds;
+    }
+
+    private JSONArray visitFraudTypes(HashMap<Integer, String> fraudTypes) {
+        JSONArray fraudTypesArray = new JSONArray();
+
+        for (Map.Entry<Integer, String> entry : fraudTypes.entrySet()) {
+            JSONObject fraudType = new JSONObject();
+
+            fraudType.put("type", entry.getKey());
+            fraudType.put("description", entry.getValue());
+
+            fraudTypesArray.put(fraudType);
+        }
+
+        return fraudTypesArray;
     }
 }

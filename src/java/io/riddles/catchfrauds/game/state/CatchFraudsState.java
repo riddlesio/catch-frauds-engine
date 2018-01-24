@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -19,7 +19,8 @@
 
 package io.riddles.catchfrauds.game.state;
 
-import io.riddles.catchfrauds.game.move.CatchFraudsMove;
+import java.util.ArrayList;
+
 import io.riddles.javainterface.game.state.AbstractState;
 
 /**
@@ -29,25 +30,48 @@ import io.riddles.javainterface.game.state.AbstractState;
  *
  * @author jim
  */
-public class CatchFraudsState extends AbstractState<CatchFraudsMove> {
+public class CatchFraudsState extends AbstractState<CatchFraudsPlayerState> {
 
     private Boolean isFraudulent;
+    private boolean isBotDisqualified;
 
-    public CatchFraudsState() {
-        super();
+    public CatchFraudsState(ArrayList<CatchFraudsPlayerState> playerStates) {
+        super(null, playerStates, 0);
         this.isFraudulent = null;
+        this.isBotDisqualified = false;
     }
 
     public CatchFraudsState(CatchFraudsState previousState,
-                            CatchFraudsMove move, int roundNumber, boolean isFraudulent) {
-        super(previousState, move, roundNumber);
+                            ArrayList<CatchFraudsPlayerState> playerStates, int roundNumber) {
+        super(previousState, playerStates, roundNumber);
+        this.isFraudulent = null;
+        this.isBotDisqualified = previousState.isBotDisqualified();
+    }
+
+    public CatchFraudsState createNextState(int roundNumber) {
+        // Create new player states from current player states
+        ArrayList<CatchFraudsPlayerState> playerStates = new ArrayList<>();
+        for (CatchFraudsPlayerState playerState : getPlayerStates()) {
+            playerStates.add(new CatchFraudsPlayerState(playerState));
+        }
+
+        // Create new state from current state
+        return new CatchFraudsState(this, playerStates, roundNumber);
+    }
+
+    public void setBotDisqualified() {
+        this.isBotDisqualified = true;
+    }
+
+    public boolean isBotDisqualified() {
+        return this.isBotDisqualified;
+    }
+
+    public void setIsFraudulent(boolean isFraudulent) {
         this.isFraudulent = isFraudulent;
     }
 
-    public boolean isFraudulent() throws NullPointerException {
-        if (this.isFraudulent != null) {
-            return this.isFraudulent;
-        }
-        throw new NullPointerException("State isFraudulent is not set");
+    public Boolean isFraudulent() {
+        return this.isFraudulent;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -31,9 +31,12 @@ import java.util.LinkedHashMap;
 public class Record {
 
     private final String FRAUD_COLUMN = "fraud";
-    private final int FRAUDULENT_VALUE = 1;
+    private final String FRAUD_DESCRIPTION_COLUMN = "fraud_description";
+    private final int NON_FRAUDULENT_VALUE = 0;
 
     private LinkedHashMap<String, String> columns;
+    private int fraudType;
+    private String fraudDescription;
 
     public Record(String[] format, String input) {
         this.columns = new LinkedHashMap<>();
@@ -44,7 +47,19 @@ public class Record {
         }
 
         for (int i = 0; i < format.length; i++) {
-            this.columns.put(format[i], values[i]);
+            String key = format[i];
+            String value = values[i];
+
+            this.columns.put(key, value);
+
+            switch (key) {
+                case FRAUD_COLUMN:
+                    this.fraudType = Integer.parseInt(value);
+                    break;
+                case FRAUD_DESCRIPTION_COLUMN:
+                    this.fraudDescription = value;
+                    break;
+            }
         }
     }
 
@@ -61,7 +76,15 @@ public class Record {
     }
 
     public boolean isFraudulent() {
-        return Integer.parseInt(this.columns.get(FRAUD_COLUMN)) == FRAUDULENT_VALUE;
+        return this.fraudType != NON_FRAUDULENT_VALUE;
+    }
+
+    public int getFraudType() {
+        return this.fraudType;
+    }
+
+    public String getFraudDescription() {
+        return this.fraudDescription;
     }
 
     private String toString(LinkedHashMap<String, String> columns) {
@@ -71,6 +94,8 @@ public class Record {
     private LinkedHashMap<String, String> getColumnsWithoutState() {
         LinkedHashMap<String, String> columnsClone = new LinkedHashMap<>(this.columns);
         columnsClone.remove(FRAUD_COLUMN);
+        columnsClone.remove(FRAUD_DESCRIPTION_COLUMN);
+
         return columnsClone;
     }
 }

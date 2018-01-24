@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 riddles.io (developers@riddles.io)
+ * Copyright 2018 riddles.io (developers@riddles.io)
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -30,28 +30,7 @@ import io.riddles.javainterface.game.player.AbstractPlayer;
  */
 public class CatchFraudsPlayer extends AbstractPlayer {
 
-    private double detectedFrauds;
-    private double falsePositives;
-
     public CatchFraudsPlayer(int id) {
         super(id);
-        this.detectedFrauds = 0.0;
-        this.falsePositives = 0.0;
-    }
-
-    public void incrementDetectedFrauds() {
-        this.detectedFrauds++;
-    }
-
-    public void incrementFalsePositives() {
-        this.falsePositives++;
-    }
-
-    public double getDetectedFrauds() {
-        return this.detectedFrauds;
-    }
-
-    public double getFalsePositives() {
-        return this.falsePositives;
     }
 }
