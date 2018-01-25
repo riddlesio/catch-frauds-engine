@@ -1,7 +1,6 @@
 txid,shopper_id,amount,shopper_country,issuer_country,shopper_email,creation_date,card_number_hash,txvariantcode,bin,currency,fraud,fraud_description
-601,74,9843,RO,RO,frederic_garris@sky.com,19/10/2016 06:15 AM,8702765eaacb8e125b,visastandarddebit,203189,EUR,5,Multiple transactions coming from high risk countries
 602,321,3426,MP,IN,agatha.march@verizon.net,19/10/2016 08:18 AM,b5c864f8bb3b64e3c0,amex_applepay,422779,NOK,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-603,18,98231,UA,CV,marceleneshearer@live.nl,19/10/2016 08:37 AM,924cec165983bb686d,visabusiness,629029,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country. 
+603,18,98231,UA,CV,marceleneshearer@live.nl,19/10/2016 08:37 AM,924cec165983bb686d,visabusiness,629029,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
 604,321,133686,MP,PM,agatha.march@verizon.net,19/10/2016 08:56 AM,d77dff1ba76cc09def,mc_samsungpay,786880,GBP,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
 605,10,87,TJ,CX,luna.lambert@protonmail.com,19/10/2016 09:07 AM,92bfdedfee44a8b96b,visapurchasing,735043,EUR,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
 606,333,990,CZ,UA,tiera_vela@sky.com,19/10/2016 11:00 AM,2cb033c81dc92fd208,bcmc_mobile,760054,USD,0,no fraud
@@ -49,9 +48,9 @@ txid,shopper_id,amount,shopper_country,issuer_country,shopper_email,creation_dat
 648,79,5167,GP,GP,dario.keeton@hotmail.com,20/10/2016 04:49 PM,ed35dd29b8d34c2a5f,mccredit,317644,EUR,3,"Multiple transactions for the same shopper in short time frame (velocity), with two ranges: between 5 and 20 transactions, within 0 - 5 min."
 649,79,62,GP,GP,dario.keeton@hotmail.com,20/10/2016 04:50 PM,ed35dd29b8d34c2a5f,mccredit,317644,CAD,3,"Multiple transactions for the same shopper in short time frame (velocity), with two ranges: between 5 and 20 transactions, within 0 - 5 min."
 650,99,59,SV,TT,mui_keyes@bellsouth.net,20/10/2016 05:24 PM,014d7c63e50ca9a360,mccredit,846970,EUR,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-651,189,143607,UA,PL,erinlaroche@live.nl,20/10/2016 06:38 PM,9dbe2ee736d82b4580,mccommercialcredit,836755,EUR,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country. 
+651,189,143607,UA,PL,erinlaroche@live.nl,20/10/2016 06:38 PM,9dbe2ee736d82b4580,mccommercialcredit,836755,EUR,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
 652,364,69657,LU,LU,nelly-weir@verizon.net,20/10/2016 07:40 PM,1ed718c5f9155ef502,mcpurchasingcredit,623219,EUR,0,no fraud
-653,251,74207,RO,CZ,hildegardjankowski@sbcglobal.net,20/10/2016 08:12 PM,3a497088ef1ed722f6,visaclassic,294764,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country. 
+653,251,74207,RO,CZ,hildegardjankowski@sbcglobal.net,20/10/2016 08:12 PM,3a497088ef1ed722f6,visaclassic,294764,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
 654,229,676,BO,BO,rolland-waterman@orange.fr,20/10/2016 08:13 PM,7cefbded253e30616b,visacommercialsuperpremiumdebit,530664,USD,0,no fraud
 655,256,5608,AX,AX,arianne.ray@cox.net,20/10/2016 08:25 PM,5947a41ee46128ac11,mccommercialpremiumdebit,898336,CNY,0,no fraud
 656,115,66163,JE,JE,toryparrott@aol.com,20/10/2016 10:14 PM,083810c08c6ff8f795,mcpurchasingdebit,876195,EUR,0,no fraud
@@ -63,7 +62,7 @@ txid,shopper_id,amount,shopper_country,issuer_country,shopper_email,creation_dat
 662,350,3095,NC,NC,susie-towle@live.nl,21/10/2016 12:46 AM,e656629685a40e33e0,maestrouk,947864,GBP,0,no fraud
 663,155,9851,PW,PW,shawnda.bolen@gmail.com,21/10/2016 01:15 AM,c49076b4a6622b1af8,amex,213793,CAD,0,no fraud
 664,332,3067,MP,MP,alissa.schoonover@orange.fr,21/10/2016 02:24 AM,1af44750839b361a72,visacommercialsuperpremiumcredit,768986,USD,0,no fraud
-665,250,14158,RO,RW,coralrunyon@ntlworld.com,21/10/2016 02:55 AM,1afec66d69811b0a05,visacommercialcredit,431712,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country. 
+665,250,14158,RO,RW,coralrunyon@ntlworld.com,21/10/2016 02:55 AM,1afec66d69811b0a05,visacommercialcredit,431712,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
 666,181,61,CA,CA,hannahduarte@earthlink.net,21/10/2016 03:43 AM,0c8be50f5ffab16177,visasignature,668120,CAD,0,no fraud
 667,169,752,PT,PT,phillis.cheatham@sbcglobal.net,21/10/2016 03:46 AM,3a5ace2864e459a8ad,mcdebit,413803,GBP,0,no fraud
 668,359,102879,DJ,DJ,simonekillian@live.nl,21/10/2016 04:52 AM,d0e7087af3e8aa3706,visacommercialsuperpremiumcredit,949583,NOK,0,no fraud
