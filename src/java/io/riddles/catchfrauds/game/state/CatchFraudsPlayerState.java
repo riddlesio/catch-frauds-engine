@@ -49,7 +49,8 @@ public class CatchFraudsPlayerState extends AbstractPlayerState<CatchFraudsMove>
 
     public CatchFraudsPlayerState(CatchFraudsPlayerState playerState) {
         super(playerState.getPlayerId());
-        this.detectedFrauds = playerState.getDetectedFrauds();
+        this.detectedFrauds = playerState.detectedFrauds;
+        this.falsePositives = playerState.falsePositives;
 
         this.checkPoints = playerState.checkPoints.stream()
                 .map(CheckPoint::new)
