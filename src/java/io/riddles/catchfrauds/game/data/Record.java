@@ -30,7 +30,7 @@ import java.util.LinkedHashMap;
  */
 public class Record {
 
-    private final String FRAUD_COLUMN = "fraud";
+    private final String FRAUD_COLUMN = "fraud_type";
     private final String FRAUD_DESCRIPTION_COLUMN = "fraud_description";
     private final int NON_FRAUDULENT_VALUE = 0;
 

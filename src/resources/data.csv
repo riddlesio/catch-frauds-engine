@@ -1,101 +1,101 @@
-txid,shopper_id,amount,shopper_country,issuer_country,shopper_email,creation_date,card_number_hash,txvariantcode,bin,currency,fraud,fraud_description
-602,321,3426,MP,IN,agatha.march@verizon.net,19/10/2016 08:18 AM,b5c864f8bb3b64e3c0,amex_applepay,422779,NOK,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-603,18,98231,UA,CV,marceleneshearer@live.nl,19/10/2016 08:37 AM,924cec165983bb686d,visabusiness,629029,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
-604,321,133686,MP,PM,agatha.march@verizon.net,19/10/2016 08:56 AM,d77dff1ba76cc09def,mc_samsungpay,786880,GBP,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-605,10,87,TJ,CX,luna.lambert@protonmail.com,19/10/2016 09:07 AM,92bfdedfee44a8b96b,visapurchasing,735043,EUR,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-606,333,990,CZ,UA,tiera_vela@sky.com,19/10/2016 11:00 AM,2cb033c81dc92fd208,bcmc_mobile,760054,USD,0,no fraud
-607,241,82,AF,AF,janessasaunders@cox.net,19/10/2016 11:11 AM,000aca4e77caf6a23a,visa_samsungpay,241124,USD,0,no fraud
-608,176,7075,MU,MU,phuong-hickey@earthlink.net,19/10/2016 11:14 AM,02a9a53bca65a4ebba,visastandardcredit,225395,CNY,0,no fraud
-609,323,6049,SE,SE,juliuslandrum@sky.com,19/10/2016 02:14 PM,b29419e2af0aec5a9f,bcmc_mobile,386234,NOK,0,no fraud
-610,361,35582,TT,TT,koreycutler@rediffmail.com,19/10/2016 02:23 PM,59895cd5278bc5ba70,mccommercialcredit,138376,GBP,0,no fraud
-611,344,5859,PM,ZW,reuben.presley@verizon.net,19/10/2016 02:36 PM,e9e6a27b8180335d12,mc_samsungpay,975478,USD,0,no fraud
-612,221,107328,SV,SV,pamelagreen@sky.com,19/10/2016 05:05 PM,27d70d030b0e8aa5b1,visa_applepay,579774,EUR,0,no fraud
-613,225,71927,MF,AI,tai.bottoms@bellsouth.net,19/10/2016 05:16 PM,b0e37bf93df5eff3f6,mcdebit,177149,USD,0,no fraud
-614,83,58,SJ,AM,francisca-moniz@hotmail.com,19/10/2016 05:31 PM,468dbe23b59937a9ea,mcatm,986866,GBP,0,no fraud
-615,214,6246,FK,FK,terrilyn.teal@protonmail.com,19/10/2016 05:33 PM,e076c082c59a4a4435,visafleetdebit,458697,EUR,0,no fraud
-616,384,102,VC,VC,andra_zeller@verizon.net,19/10/2016 06:34 PM,1dadc7c94e376c20de,visagold,147897,AUD,0,no fraud
-617,277,8820,BE,BE,lutherclarke@comcast.net,19/10/2016 08:14 PM,f565b986e1bcdb26bd,visacorporatedebit,502572,GBP,0,no fraud
-618,271,5243,ER,ER,lolita-stacy@123india.com,19/10/2016 09:27 PM,6d069529151dd4aa64,mcstandardcredit,126788,EUR,0,no fraud
-619,103,62,CM,CM,edward-olds@rediffmail.com,19/10/2016 09:48 PM,920b92c41de8c99697,visasignature,550049,AUD,0,no fraud
-620,218,8184,UM,UM,eddypugh@orange.fr,19/10/2016 10:06 PM,41437f53fb817235c0,visacommercialpremiumcredit,417607,EUR,0,no fraud
-621,124,6020,NE,NE,rubin.hicks@sky.com,19/10/2016 10:54 PM,ebae4962f49de23b6a,visacommercialpremiumcredit,836609,CNY,0,no fraud
-622,274,5018,MM,MM,marcell-wise@earthlink.net,19/10/2016 11:55 PM,5d341420128f4a82a4,jcb,497173,NOK,0,no fraud
-623,143,57336,VG,VG,olinda-mast@hotmail.com,20/10/2016 12:03 AM,b310964d90d693e0d3,cirrus,311248,CNY,0,no fraud
-624,237,60,UA,UA,suzy.cody@ntlworld.com,20/10/2016 12:09 AM,f1baa39471711fc627,visacommercialsuperpremiumcredit,759369,NOK,5,Multiple transactions coming from high risk countries
-625,217,93569,HM,HM,lesiashipley@comcast.net,20/10/2016 01:01 AM,855aafc10ee7feb38c,visacredit,237779,NOK,0,no fraud
-626,373,934,RO,RO,lavina_anderson@hotmail.com,20/10/2016 02:59 AM,69ad4643ebb2ce2218,visapurchasingdebit,840136,NOK,5,Multiple transactions coming from high risk countries
-627,151,75,KE,NR,corey-starr@ntlworld.com,20/10/2016 04:52 AM,7b14e695745f2833e0,visapurchasingdebit,706623,NOK,0,no fraud
-628,154,55,BD,WS,thearankin@gmail.com,20/10/2016 06:14 AM,fc352007b68c4ad2c9,visapremiumcredit,640541,CNY,0,no fraud
-629,78,361,CI,CI,brittney.windham@123india.com,20/10/2016 07:56 AM,8483fa5d67509ced73,maestrouk,609573,CAD,0,no fraud
-630,138,236,ER,ER,stella_smalley@airforce.net,20/10/2016 08:34 AM,a965d824d1663b2070,visapurchasingcredit,522920,AUD,0,no fraud
-631,21,3703,VG,VG,delphia.hilliard@shaw.ca,20/10/2016 08:42 AM,8c3e65f7d0ddc3e386,visadankort,461942,CAD,0,no fraud
-632,394,4363,NZ,NZ,quiana.sotelo@cox.net,20/10/2016 08:42 AM,b07e1986308b99ed36,visa_applepay,323094,CNY,0,no fraud
-633,315,9268,IO,LB,van_mccall@shaw.ca,20/10/2016 08:58 AM,f7ddd41f9d509bc95c,visasaraivacard,453865,SEK,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-634,350,132982,NC,NC,susie-towle@live.nl,20/10/2016 08:59 AM,c40aa75ceb7f9b018f,visapremiumcredit,753153,EUR,0,no fraud
-635,29,2360,TF,TF,katelyn-keefe@rediffmail.com,20/10/2016 09:49 AM,0d463ef931cf84d8fa,mccorporatecredit,536775,USD,0,no fraud
-636,233,108,AO,AO,luthercavazos@protonmail.com,20/10/2016 10:29 AM,2a88b43be7a7b12d0b,visastandarddebit,366000,AUD,0,no fraud
-637,314,101,GY,GY,marlene_salmon@gmail.com,20/10/2016 10:53 AM,2f33f013b2b48977f5,mcpremiumcredit,583343,USD,0,no fraud
-638,264,99408,PE,PE,geraldineway@rediffmail.com,20/10/2016 11:34 AM,0031101d28f1fc4447,visahipotecario,550722,SEK,0,no fraud
-639,158,35428,BD,BD,alec-halsey@earthlink.net,20/10/2016 12:05 PM,b7c7d3ccd36c909175,visafleetcredit,710902,AUD,0,no fraud
-640,367,2062,TC,TC,kenya-haller@123india.com,20/10/2016 12:12 PM,1938184447db3b8ad8,visacommercialsuperpremiumdebit,918037,AUD,0,no fraud
-641,67,4495,PG,PG,tiawhittaker@sky.com,20/10/2016 12:15 PM,3fa1d283061911ff95,mc_androidpay,552190,NOK,0,no fraud
-642,21,93261,VG,VG,bessie.mcgill@rediffmail.com,20/10/2016 02:03 PM,f76ec4882e28ff9d8e,mcsuperpremiumcredit,684121,CAD,0,no fraud
-643,50,232,IO,IO,columbus.gross@123india.com,20/10/2016 02:59 PM,7313cc796d65a60193,cirrus,812155,CAD,0,no fraud
-644,87,5932,CY,CY,neida-chambers@rediffmail.com,20/10/2016 04:26 PM,6d44ff5f51ffcaf676,visastandarddebit,900501,USD,4,Multiple transactions for the same shopper with different (disposal) email addresses.
-645,6,107243,CD,CD,paularubio@live.com,20/10/2016 04:43 PM,fc8cda56b82a906d3a,visadebit,445134,CAD,0,no fraud
-646,79,89412,GP,GP,jose_fulkerson@outlook.com,20/10/2016 04:45 PM,ed35dd29b8d34c2a5f,mccredit,317644,AUD,3,"Multiple transactions for the same shopper in short time frame (velocity), with two ranges: between 5 and 20 transactions, within 0 - 5 min."
-647,79,138305,GP,GP,dario.keeton@hotmail.com,20/10/2016 04:47 PM,ed35dd29b8d34c2a5f,mccredit,317644,GBP,3,"Multiple transactions for the same shopper in short time frame (velocity), with two ranges: between 5 and 20 transactions, within 0 - 5 min."
-648,79,5167,GP,GP,dario.keeton@hotmail.com,20/10/2016 04:49 PM,ed35dd29b8d34c2a5f,mccredit,317644,EUR,3,"Multiple transactions for the same shopper in short time frame (velocity), with two ranges: between 5 and 20 transactions, within 0 - 5 min."
-649,79,62,GP,GP,dario.keeton@hotmail.com,20/10/2016 04:50 PM,ed35dd29b8d34c2a5f,mccredit,317644,CAD,3,"Multiple transactions for the same shopper in short time frame (velocity), with two ranges: between 5 and 20 transactions, within 0 - 5 min."
-650,99,59,SV,TT,mui_keyes@bellsouth.net,20/10/2016 05:24 PM,014d7c63e50ca9a360,mccredit,846970,EUR,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-651,189,143607,UA,PL,erinlaroche@live.nl,20/10/2016 06:38 PM,9dbe2ee736d82b4580,mccommercialcredit,836755,EUR,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
-652,364,69657,LU,LU,nelly-weir@verizon.net,20/10/2016 07:40 PM,1ed718c5f9155ef502,mcpurchasingcredit,623219,EUR,0,no fraud
-653,251,74207,RO,CZ,hildegardjankowski@sbcglobal.net,20/10/2016 08:12 PM,3a497088ef1ed722f6,visaclassic,294764,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
-654,229,676,BO,BO,rolland-waterman@orange.fr,20/10/2016 08:13 PM,7cefbded253e30616b,visacommercialsuperpremiumdebit,530664,USD,0,no fraud
-655,256,5608,AX,AX,arianne.ray@cox.net,20/10/2016 08:25 PM,5947a41ee46128ac11,mccommercialpremiumdebit,898336,CNY,0,no fraud
-656,115,66163,JE,JE,toryparrott@aol.com,20/10/2016 10:14 PM,083810c08c6ff8f795,mcpurchasingdebit,876195,EUR,0,no fraud
-657,256,8304,AX,AX,arianne.ray@cox.net,20/10/2016 10:49 PM,a05dcbd14df6a399b3,mcpremiumdebit,815767,USD,0,no fraud
-658,193,118908,VE,VE,ethel_doty@rediffmail.com,20/10/2016 11:07 PM,467cee9b11e1588f97,bcmc,334844,EUR,0,no fraud
-659,341,110,LS,LS,delila-seals@yahoo.com,20/10/2016 11:08 PM,3f71e39bb9a3e03155,mcfleetdebit,351797,AUD,0,no fraud
-660,101,63204,TZ,DO,peggie_orth@yahoo.com,20/10/2016 11:20 PM,c307f6320b9761c8aa,visapremiumcredit,251072,SEK,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-661,356,4168,IR,IR,lillianawicker@wanadoo.fr,20/10/2016 11:27 PM,fc30ac5ae735ffee3c,mc,954520,CNY,0,no fraud
-662,350,3095,NC,NC,susie-towle@live.nl,21/10/2016 12:46 AM,e656629685a40e33e0,maestrouk,947864,GBP,0,no fraud
-663,155,9851,PW,PW,shawnda.bolen@gmail.com,21/10/2016 01:15 AM,c49076b4a6622b1af8,amex,213793,CAD,0,no fraud
-664,332,3067,MP,MP,alissa.schoonover@orange.fr,21/10/2016 02:24 AM,1af44750839b361a72,visacommercialsuperpremiumcredit,768986,USD,0,no fraud
-665,250,14158,RO,RW,coralrunyon@ntlworld.com,21/10/2016 02:55 AM,1afec66d69811b0a05,visacommercialcredit,431712,NOK,1,High amount (>5000 EUR) where Issuer Country differs from Shopper Country and Shopper Country is high risk country.
-666,181,61,CA,CA,hannahduarte@earthlink.net,21/10/2016 03:43 AM,0c8be50f5ffab16177,visasignature,668120,CAD,0,no fraud
-667,169,752,PT,PT,phillis.cheatham@sbcglobal.net,21/10/2016 03:46 AM,3a5ace2864e459a8ad,mcdebit,413803,GBP,0,no fraud
-668,359,102879,DJ,DJ,simonekillian@live.nl,21/10/2016 04:52 AM,d0e7087af3e8aa3706,visacommercialsuperpremiumcredit,949583,NOK,0,no fraud
-669,83,8436,SJ,SJ,francisca-moniz@hotmail.com,21/10/2016 05:27 AM,53365510d947dc84a2,visa,237167,CAD,0,no fraud
-670,348,138124,MM,MM,deandrea-daily@gmx.de,21/10/2016 05:51 AM,a04f6d23f1d1c2dcf8,mcpurchasingdebit,979195,NOK,0,no fraud
-671,197,5448,SH,SH,oralee_mclean@gmx.de,21/10/2016 06:01 AM,8cf55d941de07023ab,bcmc_mobile,116637,EUR,0,no fraud
-672,315,34736,IO,AI,kentonjohnson@qq.com,21/10/2016 08:24 AM,6d616f031c22341204,mcsuperpremiumcredit,502368,CAD,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-673,99,56,SV,CA,velma_penn@comcast.net,21/10/2016 08:25 AM,e57fcb27981c8f8c02,mcpro,172188,USD,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-674,130,57,NF,NF,pedrojefferson@verizon.net,21/10/2016 08:34 AM,fc8619083a1285bdac,mccorporatecredit,416450,GBP,0,no fraud
-675,234,323,MR,MR,millieboykin@live.nl,21/10/2016 08:35 AM,a18a06d1b62e789d22,visasaraivacard,290549,GBP,0,no fraud
-676,244,4385,SG,NC,alethawatson@yahoo.com,21/10/2016 08:36 AM,5686928b0d3b2f2570,visacommercialdebit,962366,USD,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-677,225,56,MF,MF,tai.bottoms@bellsouth.net,21/10/2016 08:53 AM,4f61b18a892fcf4215,visadankort,653047,CNY,0,no fraud
-678,139,3502,MZ,MZ,dennisoliphant@sky.com,21/10/2016 09:35 AM,3496a86865e35f2928,mccorporate,928692,EUR,0,no fraud
-679,176,5674,MU,MU,phuong-hickey@earthlink.net,21/10/2016 10:10 AM,1e2e02eefbf6e3de6f,amex_samsungpay,654966,AUD,0,no fraud
-680,73,95427,AI,AI,crista_pulliam@live.com,21/10/2016 10:41 AM,0c92a2c0a6a370cc94,amex,505256,GBP,0,no fraud
-681,227,26403,LY,IO,timmy-kinder@orange.fr,21/10/2016 11:52 AM,07a0480aad96ffd7eb,visaalphabankbonus,689687,EUR,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-682,368,2491,SC,SC,gudrun_deleon@123india.com,21/10/2016 01:31 PM,8d20bb2106881fe0e9,visaplatinum,691287,GBP,0,no fraud
-683,37,108934,RO,RO,samara-burrell@msn.com,21/10/2016 01:47 PM,09082f13b6278ee1b6,mcpurchasingcredit,937774,CAD,5,Multiple transactions coming from high risk countries
-684,10,130499,TJ,BN,luna.lambert@protonmail.com,21/10/2016 01:53 PM,fbdf5477f81c839d80,mccommercialpremiumdebit,652686,GBP,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-685,101,65,TZ,YT,peggie_orth@yahoo.com,21/10/2016 03:04 PM,2a769f0e0196ffe4b7,visacorporatedebit,125664,EUR,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-686,227,54,LY,GU,timmy-kinder@orange.fr,21/10/2016 03:32 PM,577fdf3cfdf2edcdbd,visacommercialpremiumdebit,557822,USD,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
-687,166,8809,GS,GS,sharleenjennings@hotmail.com,21/10/2016 04:44 PM,c8a00bcc22f23dca2f,mccorporatecredit,685667,SEK,0,no fraud
-688,376,166,KE,KE,claretha.owen@wanadoo.fr,21/10/2016 05:02 PM,fc5ba98cce8a315df0,visapremiumdebit,828088,CAD,0,no fraud
-689,43,132868,PL,PL,jonas.gamboa@cox.net,21/10/2016 05:15 PM,8a4aaca3c9393ffa3a,visadebit,323174,AUD,0,no fraud
-690,317,792,CK,CK,kristoferbeatty@earthlink.net,21/10/2016 06:25 PM,17f25b9a3b8789d5bf,visa_applepay,380958,NOK,0,no fraud
-691,255,90,KZ,KZ,lennie_poe@ntlworld.com,21/10/2016 06:53 PM,2ce187ea42a746e14c,mcstandarddebit,239109,GBP,0,no fraud
-692,304,55,CK,CK,nichole-schmitt@earthlink.net,21/10/2016 07:03 PM,2ff37d69366ea629ba,visaalphabankbonus,734491,NOK,0,no fraud
-693,310,33633,SV,SV,avery-moody@bellsouth.net,21/10/2016 07:41 PM,d8e8177b82ae95b895,visadebit,243121,USD,0,no fraud
-694,173,659,CY,CY,jann.washburn@aol.com,21/10/2016 09:30 PM,7d81d151214a4d17af,jcb,884450,SEK,0,no fraud
-695,209,82389,LB,PM,kari_hand@sbcglobal.net,21/10/2016 09:39 PM,332ce237b34f2d16de,mcsuperpremiumcredit,458354,GBP,0,no fraud
-696,390,87592,JO,JO,echopridgen@live.com,21/10/2016 09:40 PM,6baf915b036471a02e,visasaraivacard,656213,CNY,0,no fraud
-697,391,28244,SD,SD,dannie.mortensen@barcelona.com,21/10/2016 10:24 PM,4af30531284b91261a,visaplatinum,634403,SEK,0,no fraud
-698,183,9475,KY,KY,terry-amaya@yahoo.com,21/10/2016 10:32 PM,35e42e5e4b84e3f4db,mcatm,546976,CNY,0,no fraud
-699,29,114121,TF,GI,katelyn-keefe@rediffmail.com,21/10/2016 11:41 PM,a4f150e97557f4a2ed,mccommercialpremiumdebit,793906,CNY,0,no fraud
-700,7,4518,ER,ER,darlena-angel@gmx.de,21/10/2016 11:55 PM,a9166f37860b189811,visaalphabankbonus,242657,EUR,0,no fraud
-701,321,433,MP,IN,agatha.march@verizon.net,22/10/2016 12:02 AM,b5c864f8bb3b64e3c0,amex_applepay,422779,CAD,2, Multiple cards for one shopper where Issuer Country differs from Shopper Country.
+txid,issuer_country,txvariantcode,bin,amount,currency,shopper_country,creation_date,shopper_email,card_number_hash,fraud,fraud_type
+0,DE,VISABUSINESS,794962,20876,EUR,UA,2014-03-02 15:21:33,michallevy@comcast.net,card853505,true,1
+1,PL,MCDEBIT,506222,453,PLN,PL,2014-03-03 22:28:48,ossie_goble@gmx.de,card269538,false,0
+2,AE,MCDEBIT,458187,3887,AED,AE,2014-02-14 21:13:39,carola.giron@outlook.com,card840790,false,0
+3,GB,VISADEBIT,190652,1868,GBP,GB,2014-03-02 12:56:07,rhea-mayers@rediffmail.com,card252673,false,0
+4,DE,VISABUSINESS,838325,1231,EUR,DE,2014-02-28 13:46:57,sacha_baylor@yandex.com,card864506,false,0
+5,ES,MCCREDIT,172695,3085,EUR,ES,2014-02-15 17:02:54,sharla.epps@gmx.de,card185485,false,0
+6,DE,MCDEBIT,941570,993,EUR,DE,2014-03-10 04:12:46,charleen.magana@rediffmail.com,card990770,false,0
+7,ES,MCDEBIT,906281,1442,EUR,ES,2014-02-21 19:23:28,wyatt.cohen@comcast.net,card119845,false,0
+8,AE,MCDEBIT,458187,4126,AED,AE,2014-02-11 11:21:55,carola.giron@bellsouth.net,card840790,false,0
+9,PT,VISABUSINESS,462923,1763,EUR,PT,2014-02-11 03:16:14,jodyness@bellsouth.net,card679729,false,0
+10,SE,MCCREDIT,866660,7802,SEK,SE,2014-03-10 16:17:57,tawanda.hardaway@verizon.net,card382115,false,0
+11,GB,VISA,462434,1348,GBP,GB,2014-02-25 07:07:06,raymonvilla@sbcglobal.net,card41732,false,0
+12,GB,VISACLASSIC,692920,647,GBP,GB,2014-03-09 04:08:44,jeramy.alger@gmx.de,card306975,false,0
+13,US,MCCREDIT,723703,1940,USD,US,2014-02-26 14:24:02,lizeth-reichert@comcast.net,card978104,true,3
+14,MX,VISACLASSIC,493524,49972,MXN,MX,2014-02-20 04:12:17,michale_gerber@rediffmail.com,card14939,false,0
+15,NO,VISA,947059,1640,NOK,NO,2014-02-28 21:02:00,arceliabook@shaw.ca,card977283,false,0
+16,DE,VISADEBIT,410139,2612,EUR,DE,2014-02-12 21:38:37,graham.brunson@rediffmail.com,card991695,false,0
+17,PT,MCDEBIT,777673,4139,EUR,PT,2014-02-19 06:09:27,gay.cordell@sky.com,card455594,false,0
+18,IT,VISADEBIT,573061,8080,EUR,NI,2014-02-25 23:43:45,joshua_horn@gmx.de,card116991,true,1
+19,ES,MCDEBIT,175968,602,EUR,ES,2014-02-28 05:12:27,vernita-epstein@msn.com,card817072,true,4
+20,GB,VISABUSINESS,234802,2405,GBP,GB,2014-03-11 02:54:52,philomenahaskins@charter.net,card324957,false,0
+21,ES,VISADEBIT,688618,301,EUR,ES,2014-02-27 09:29:50,carolin_whittle@barcelona.com,card573526,false,0
+22,SE,MCDEBIT,151689,4656,SEK,SE,2014-03-11 19:19:39,donelladevine@qq.com,card185102,false,0
+23,PT,VISABUSINESS,462923,3699,EUR,PT,2014-03-09 07:39:38,jody_ness@barcelona.com,card679729,false,0
+24,PT,VISABUSINESS,970785,526,EUR,PT,2014-03-03 15:52:58,rodrigo.garrett@sky.com,card568708,false,0
+25,NL,VISA,818435,1131,EUR,NL,2014-03-12 07:03:01,augustawarner@wanadoo.fr,card554683,false,0
+26,AE,MCDEBIT,458187,146,AED,AE,2014-03-11 06:47:37,carola.giron@outlook.com,card840790,false,0
+27,GB,VISADEBIT,190652,1625,GBP,GB,2014-02-16 23:54:25,rhea-mayers@rediffmail.com,card252673,false,0
+28,NL,VISA,818435,3500,EUR,NL,2014-02-21 01:14:20,augusta_warner@aol.com,card554683,false,0
+29,GB,VISABUSINESS,234802,3987,GBP,GB,2014-03-08 04:39:09,philomenahaskins@charter.net,card324957,false,0
+30,SE,VISA,547468,14000,SEK,SE,2014-02-23 13:11:50,lupita_sewell@protonmail.com,card582142,false,0
+31,AE,MCDEBIT,458187,2693,AED,AE,2014-02-28 23:11:06,carola.giron@bellsouth.net,card840790,false,0
+32,IT,VISADEBIT,573061,17934,EUR,NI,2014-02-15 05:24:36,joshua.horn@rediffmail.com,card116991,true,1
+33,NL,VISA,818435,1297,EUR,NL,2014-02-21 17:40:44,augusta_warner@aol.com,card554683,false,0
+34,US,MCCREDIT,723703,1940,USD,US,2014-02-26 14:23:37,lizeth-reichert@comcast.net,card978104,true,3
+35,SE,MCDEBIT,151689,7935,SEK,SE,2014-03-07 07:24:47,donelladevine@qq.com,card185102,false,0
+36,SE,MCCREDIT,848392,15485,SEK,SE,2014-02-21 07:29:44,thomasena.dial@bellsouth.net,card111186,false,0
+37,PL,MCCREDIT,700309,222,PLN,PL,2014-02-12 05:40:54,kamkingsley@charter.net,card227894,false,0
+38,SE,MCCREDIT,866660,40091,SEK,SE,2014-03-02 21:04:33,tawanda.hardaway@verizon.net,card382115,false,0
+39,PL,VISACLASSIC,689958,2534,PLN,PL,2014-03-12 21:13:19,miranda.boykin@gmail.com,card891297,false,0
+40,ES,MCDEBIT,175968,1197,EUR,ES,2014-03-01 08:20:21,rowena-arnold@airforce.net,card817072,true,4
+41,SE,VISACLASSIC,587310,9486,SEK,SE,2014-02-19 04:14:52,vinacraddock@bellsouth.net,card107695,false,0
+42,ES,MCCREDIT,172695,4712,EUR,ES,2014-03-10 17:51:06,sharla.epps@gmx.de,card185485,false,0
+43,GB,VISACLASSIC,692920,71,GBP,GB,2014-02-16 01:00:26,jeramyalger@comcast.net,card306975,false,0
+44,AE,VISACLASSIC,789249,1167,AED,NO,2014-02-15 23:42:49,loraineparrott@protonmail.com,card589253,true,2
+45,SE,VISABUSINESS,486559,26373,SEK,SE,2014-02-23 16:59:11,alva_toro@airforce.net,card243680,false,0
+46,GB,VISADEBIT,190652,2434,GBP,GB,2014-02-23 05:08:20,rhea-mayers@rediffmail.com,card252673,false,0
+47,US,MCCREDIT,723703,1940,USD,US,2014-02-26 14:24:01,lizeth-reichert@comcast.net,card978104,true,3
+48,PT,MCDEBIT,777673,2138,EUR,PT,2014-02-25 20:02:33,gay_cordell@barcelona.com,card455594,false,0
+49,PL,VISACLASSIC,689958,1802,PLN,PL,2014-02-21 04:47:39,miranda.boykin@gmail.com,card891297,false,0
+50,IT,VISABUSINESS,141909,4271,EUR,IT,2014-03-08 22:20:23,gloria_wilkins@barcelona.com,card314092,false,0
+51,PT,VISA,866827,378,EUR,PT,2014-03-10 05:50:28,gay_cordell@barcelona.com,card682382,false,0
+52,ES,VISABUSINESS,626760,117,EUR,ES,2014-03-03 23:08:10,wyatt.cohen@comcast.net,card306738,false,0
+53,AE,VISACLASSIC,789249,906,AED,NO,2014-02-22 18:19:50,loraine-parrott@aol.com,card589253,true,2
+54,GB,VISADEBIT,190652,2000,GBP,GB,2014-02-13 13:18:05,rhea-mayers@rediffmail.com,card252673,false,0
+55,GB,VISADEBIT,190652,606,GBP,GB,2014-02-19 21:38:17,rhea-mayers@rediffmail.com,card252673,false,0
+56,FR,MCCREDIT,347045,1447,EUR,NO,2014-02-28 09:48:54,loraine-parrott@aol.com,card765633,true,2
+57,SE,VISABUSINESS,486559,39598,SEK,SE,2014-03-06 05:23:37,alva_toro@airforce.net,card243680,false,0
+58,ES,VISADEBIT,688618,1585,EUR,ES,2014-02-14 15:02:39,carolin_whittle@barcelona.com,card573526,false,0
+59,US,MCCREDIT,723703,1940,USD,US,2014-02-26 14:22:00,lizeth-reichert@comcast.net,card978104,true,3
+60,ES,VISADEBIT,803331,1019,EUR,ES,2014-03-01 15:07:49,cecilia_durham@airforce.net,card104615,false,0
+61,SE,MCCREDIT,866660,13236,SEK,SE,2014-03-10 02:05:49,tawanda.hardaway@verizon.net,card382115,false,0
+62,US,MCCREDIT,723703,1940,USD,US,2014-02-26 14:24:25,lizeth-reichert@comcast.net,card978104,true,3
+63,PT,VISACLASSIC,669087,793,EUR,PT,2014-03-11 16:06:03,luettatracy@yandex.com,card846175,false,0
+64,AE,MCDEBIT,458187,4441,AED,AE,2014-02-18 21:41:40,carola.giron@outlook.com,card840790,false,0
+65,ES,VISADEBIT,803331,2591,EUR,ES,2014-02-12 22:39:21,cecilia-durham@earthlink.net,card104615,false,0
+66,SE,VISABUSINESS,486559,15406,SEK,SE,2014-03-03 05:09:30,alva_toro@airforce.net,card243680,false,0
+67,PT,VISACLASSIC,753326,3071,EUR,PT,2014-03-06 18:07:02,rodrigo-garrett@gmx.de,card237835,false,0
+68,PL,VISABUSINESS,926507,3791,PLN,PL,2014-02-18 05:15:21,micah_covert@live.com,card841698,false,0
+69,IT,VISADEBIT,573061,29290,EUR,NI,2014-03-06 11:21:14,joshua_horn@gmx.de,card116991,true,1
+70,ES,VISADEBIT,803331,3084,EUR,ES,2014-02-15 11:02:31,cecilia_durham@airforce.net,card104615,false,0
+71,SE,VISACLASSIC,587310,25692,SEK,SE,2014-02-20 09:04:36,vina_craddock@sbcglobal.net,card107695,false,0
+72,GB,VISA,462434,255,GBP,US,2014-02-25 15:34:25,raymonvilla@live.com,card41732,false,0
+73,DE,MCCREDIT,738452,1829,EUR,DE,2014-02-26 11:23:31,graham.brunson@rediffmail.com,card550810,false,0
+74,DE,MCCREDIT,738452,504,EUR,DE,2014-03-06 19:01:43,graham.brunson@rediffmail.com,card550810,false,0
+75,ES,MCDEBIT,757660,635,EUR,NO,2014-02-17 21:55:47,loraine-parrott@aol.com,card801330,true,2
+76,GB,VISADEBIT,365299,2981,GBP,US,2014-02-17 17:19:57,shonda.connolly@comcast.net,card484612,false,0
+77,PT,VISACLASSIC,753326,278,EUR,PT,2014-03-08 04:22:07,rodrigo.garrett@sky.com,card237835,false,0
+78,PL,VISABUSINESS,926507,4715,PLN,PL,2014-02-20 17:26:23,micah.covert@live.nl,card841698,false,0
+79,PT,VISA,796630,4774,EUR,PT,2014-03-01 12:30:09,kathlynmabry@airforce.net,card769332,false,0
+80,PT,VISACLASSIC,879486,1952,EUR,PT,2014-02-12 08:14:52,mary-clouse@charter.net,card798864,true,4
+81,DE,VISABUSINESS,838325,2844,EUR,DE,2014-02-19 07:59:11,sacha_baylor@yandex.com,card864506,false,0
+82,PT,VISABUSINESS,970785,958,EUR,PT,2014-02-16 19:46:14,rodrigo.garrett@sky.com,card568708,false,0
+83,MX,VISACLASSIC,493524,11756,MXN,MX,2014-03-09 15:25:29,michale_gerber@rediffmail.com,card14939,false,0
+84,NO,VISA,947059,4951,NOK,NO,2014-02-14 13:15:25,arceliabook@shaw.ca,card977283,false,0
+85,SE,MCDEBIT,151689,40325,SEK,SE,2014-02-11 09:31:51,donelladevine@qq.com,card185102,false,0
+86,NO,VISA,947059,376,NOK,FR,2014-02-22 03:36:33,arceliabook@shaw.ca,card977283,false,0
+87,AE,MCDEBIT,458187,4715,AED,AE,2014-03-09 01:40:27,carola.giron@bellsouth.net,card840790,false,0
+88,SE,VISACLASSIC,215231,41936,SEK,SE,2014-02-26 21:46:24,vina_craddock@sbcglobal.net,card626981,false,0
+89,PL,VISADEBIT,351171,2839,PLN,PL,2014-03-10 00:55:52,kamkingsley@charter.net,card338435,false,0
+90,ES,MCCREDIT,172695,1779,EUR,ES,2014-02-14 06:43:08,sharla.epps@gmx.de,card185485,false,0
+91,PT,VISABUSINESS,462923,2385,EUR,PT,2014-02-21 23:43:24,jodyness@bellsouth.net,card679729,false,0
+92,ES,MCDEBIT,263817,2858,EUR,ES,2014-03-08 17:56:27,tonda_fusco@shaw.ca,card572488,false,0
+93,NO,VISACLASSIC,291605,93,NOK,NO,2014-02-20 06:15:01,arlen_stinson@barcelona.com,card95523,false,0
+94,RO,VISA,230935,323,USD,RO,2014-02-26 23:36:16,loreta.booth@barcelona.com,card573290,true,5
+95,ES,VISADEBIT,688618,3182,EUR,ES,2014-02-17 12:22:26,carolin_whittle@barcelona.com,card573526,false,0
+96,GB,VISADEBIT,202695,4868,GBP,UA,2014-03-09 14:40:59,michallevy@comcast.net,card813317,true,1
+97,RO,VISA,721804,3125,USD,RO,2014-03-01 00:19:22,macy.dingle@qq.com,card451851,true,5
+98,ES,MCDEBIT,263817,3827,EUR,ES,2014-02-14 00:56:03,tonda_fusco@shaw.ca,card572488,false,0
+99,IT,VISADEBIT,573061,9605,EUR,NI,2014-02-20 06:24:19,joshua_horn@gmx.de,card116991,true,1
