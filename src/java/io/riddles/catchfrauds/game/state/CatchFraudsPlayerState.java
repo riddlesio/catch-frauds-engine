@@ -57,14 +57,16 @@ public class CatchFraudsPlayerState extends AbstractPlayerState<CatchFraudsMove>
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public void detectFraud(Record record, int checkPointId) {
+    public void detectFraud(Record record, ArrayList<Integer> checkPointIds) {
         if (record.isFraudulent()) {
             this.detectedFrauds++;
         } else {
             this.falsePositives++;
         }
 
-        this.checkPoints.get(checkPointId).detectFraud(record);
+        for (Integer checkPointId : checkPointIds) {
+            this.checkPoints.get(checkPointId).detectFraud(record);
+        }
     }
 
     public double getDetectedFrauds() {

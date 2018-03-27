@@ -19,6 +19,8 @@
 
 package io.riddles.catchfrauds.game.move;
 
+import java.util.ArrayList;
+
 import io.riddles.javainterface.exception.InvalidInputException;
 import io.riddles.javainterface.game.move.AbstractMove;
 
@@ -32,16 +34,16 @@ import io.riddles.javainterface.game.move.AbstractMove;
 public class CatchFraudsMove extends AbstractMove {
 
     private boolean isRefused;
-    private Integer checkPointId;
+    private ArrayList<Integer> checkPointIds;
 
     public CatchFraudsMove() {
         this.isRefused = false;
-        this.checkPointId = null;
+        this.checkPointIds = new ArrayList<>();
     }
 
-    public CatchFraudsMove(int checkPointId) {
+    public CatchFraudsMove(ArrayList<Integer> checkPointIds) {
         this.isRefused = true;
-        this.checkPointId = checkPointId;
+        this.checkPointIds = checkPointIds;
     }
 
     public CatchFraudsMove(InvalidInputException exception) {
@@ -52,7 +54,7 @@ public class CatchFraudsMove extends AbstractMove {
         return this.isRefused;
     }
 
-    public Integer getCheckPointId() {
-        return this.checkPointId;
+    public ArrayList<Integer> getCheckPointIds() {
+        return this.checkPointIds;
     }
 }

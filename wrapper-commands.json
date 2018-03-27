@@ -9,10 +9,10 @@
   },
   "match": {
     "bots": [{
-      "command": "java -jar /home/jim/workspace/catchfrauds-starterbot/build/libs/catchfrauds-starterbot-1.1.1.jar"
+      "command": "java -jar /home/jim/workspace/catchfrauds-starterbot/build/libs/catchfrauds-starterbot-1.3.0.jar"
     }],
     "engine": {
-      "command": "java -jar /home/jim/workspace/catchfrauds-engine-java/build/libs/catchfrauds-engine-java-1.2.3.jar",
+      "command": "java -jar /home/jim/workspace/catchfrauds-engine-java/build/libs/catchfrauds-engine-java-2.0.0.jar",
       "configuration": {}
     }
   }

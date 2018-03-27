@@ -19,6 +19,8 @@
 
 package io.riddles.catchfrauds.game.move;
 
+import java.util.ArrayList;
+
 import io.riddles.javainterface.exception.InvalidInputException;
 import io.riddles.javainterface.serialize.Deserializer;
 
@@ -56,11 +58,12 @@ public class CatchFraudsMoveDeserializer implements Deserializer<CatchFraudsMove
         }
 
         if (split.length != 2) {
-            throw new InvalidInputException("The checkpoint that the " +
-                    "assessment failed on is not given");
+            throw new InvalidInputException(
+                    "The checkpoints that the assessment failed on are not given"
+            );
         }
 
-        return new CatchFraudsMove(visitCheckPoint(split[1], checkPointCount));
+        return new CatchFraudsMove(visitCheckPoints(split[1], checkPointCount));
     }
 
     private boolean visitAssessment(String input) throws InvalidInputException {
@@ -74,20 +77,26 @@ public class CatchFraudsMoveDeserializer implements Deserializer<CatchFraudsMove
         }
     }
 
-    private int visitCheckPoint(String input, int checkPointCount) throws InvalidInputException {
-        int checkPointId;
+    private ArrayList<Integer> visitCheckPoints(String input, int checkPointCount) throws InvalidInputException {
+        ArrayList<Integer> checkPointIds = new ArrayList<>();
+        String[] split = input.split(",");
 
-        try {
-            checkPointId = Integer.parseInt(input);
-        } catch (Exception ex) {
-            throw new InvalidInputException("Can't parse the checkpoint that the " +
-                    "assessment failed on");
+        for (String id : split) {
+            int checkPointId;
+
+            try {
+                checkPointId = Integer.parseInt(id);
+            } catch (Exception ex) {
+                throw new InvalidInputException(String.format("Can't parse checkpoint '%s'", id));
+            }
+
+            if (checkPointId >= checkPointCount) {
+                throw new InvalidInputException(String.format("Checkpoint id '%s' not found", id));
+            }
+
+            checkPointIds.add(checkPointId);
         }
 
-        if (checkPointId >= checkPointCount) {
-            throw new InvalidInputException("Given checkpoint ID not found");
-        }
-
-        return checkPointId;
+        return checkPointIds;
     }
 }

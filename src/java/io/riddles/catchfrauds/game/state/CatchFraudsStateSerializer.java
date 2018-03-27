@@ -22,8 +22,9 @@ package io.riddles.catchfrauds.game.state;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import io.riddles.catchfrauds.game.move.CatchFraudsMove;
-import io.riddles.catchfrauds.game.checkpoint.CheckPoint;
 import io.riddles.javainterface.game.state.AbstractStateSerializer;
 
 /**
@@ -54,13 +55,7 @@ public class CatchFraudsStateSerializer extends AbstractStateSerializer<CatchFra
         stateJson.put("isFraudulent", state.isFraudulent());
         if (move.getException() == null) {
             stateJson.put("isRefused", move.isRefused());
-
-            if (move.getCheckPointId() == null) {
-                stateJson.put("blockingCheckPointId", JSONObject.NULL);
-            } else {
-                stateJson.put("blockingCheckPointId", move.getCheckPointId());
-            }
-
+            stateJson.put("blockingCheckPointIds", visitCheckPointIds(move.getCheckPointIds()));
             stateJson.put("exception", JSONObject.NULL);
         } else {
             stateJson.put("isRefused", JSONObject.NULL);
@@ -69,5 +64,15 @@ public class CatchFraudsStateSerializer extends AbstractStateSerializer<CatchFra
         }
 
         return stateJson;
+    }
+
+    private JSONArray visitCheckPointIds(ArrayList<Integer> checkPointIds) {
+        JSONArray checkPointList = new JSONArray();
+
+        for (Integer checkPointId : checkPointIds) {
+            checkPointList.put(checkPointId);
+        }
+
+        return checkPointList;
     }
 }

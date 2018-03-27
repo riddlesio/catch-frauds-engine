@@ -119,7 +119,7 @@ public class CatchFraudsProcessor extends SimpleProcessor<CatchFraudsState, Catc
             if (move.isInvalid()) {
                 nextState.setBotDisqualified();
             } else if (move.isRefused()) {
-                playerState.detectFraud(record, move.getCheckPointId());
+                playerState.detectFraud(record, move.getCheckPointIds());
             }
         }
 
