@@ -77,7 +77,7 @@ public class CatchFraudsProcessor extends SimpleProcessor<CatchFraudsState, Catc
     @Override
     public double getScore(CatchFraudsState state) {
         if (state.isBotDisqualified()) {
-            return 0.0;
+            return -1.0;
         }
 
         CatchFraudsPlayerState playerState = state.getPlayerStates().get(0);
